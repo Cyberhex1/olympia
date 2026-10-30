@@ -1,0 +1,5 @@
+/* Night Watch: calm and ambient, lantern gold on deep navy */
+:root { --cream: #121a33; --panel: rgba(16, 23, 46, .82); --ink: #e9e4d4; --muted: #8e93b0; --red: #f3c86b; --soft: rgba(255,255,255,.06); --soft2: rgba(255,255,255,.1); --shadow: 0 10px 40px rgba(0,0,0,.5); }
+#title .realm { letter-spacing: .3em; font-weight: 500; font-size: 26px; }
+#face, #feed { opacity: .92; }
+.label:has(.st.waiting) { background: rgba(243, 200, 107, .85); color: #121a33; }

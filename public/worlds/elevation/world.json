@@ -1,0 +1,128 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "your island, side on",
+  "sky": {
+    "hour": 16.5
+  },
+  "camera": {
+    "pos": [
+      0,
+      24,
+      104
+    ],
+    "target": [
+      0,
+      3,
+      0
+    ],
+    "fov": 30
+  },
+  "finish": {
+    "tilt": 0.35,
+    "saturation": 1.15,
+    "warmth": 0.05
+  },
+  "terrain": {
+    "model": "elevation.glb",
+    "y": 0.1,
+    "radius": 31,
+    "layout": {
+      "summit": [
+        0,
+        15.2,
+        0
+      ],
+      "tools": {
+        "forge": {
+          "theta": 160,
+          "r": 9.5
+        },
+        "library": {
+          "theta": 215,
+          "r": 9.5
+        },
+        "beacon": {
+          "theta": 270,
+          "r": 9.5
+        },
+        "archive": {
+          "theta": 325,
+          "r": 9.5
+        },
+        "aviary": {
+          "theta": 20,
+          "r": 9.5
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 190,
+          "r": 21
+        },
+        {
+          "theta": 217,
+          "r": 21
+        },
+        {
+          "theta": 244,
+          "r": 21
+        },
+        {
+          "theta": 271,
+          "r": 21
+        },
+        {
+          "theta": 298,
+          "r": 21
+        },
+        {
+          "theta": 325,
+          "r": 21
+        },
+        {
+          "theta": 352,
+          "r": 21
+        },
+        {
+          "theta": 205,
+          "r": 28
+        },
+        {
+          "theta": 240,
+          "r": 28.5
+        },
+        {
+          "theta": 300,
+          "r": 28.5
+        },
+        {
+          "theta": 335,
+          "r": 28
+        },
+        {
+          "theta": 172,
+          "r": 22
+        },
+        {
+          "theta": 8,
+          "r": 22
+        }
+      ],
+      "agora": {
+        "theta": 150,
+        "r": 18
+      },
+      "hotel": {
+        "theta": 30,
+        "r": 25.5
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      },
+      "ringRoad": 14.0
+    }
+  }
+}

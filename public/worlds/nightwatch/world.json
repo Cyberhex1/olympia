@@ -1,0 +1,14 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "your island, keeping watch",
+  "sky": {
+    "hour": 22.6
+  },
+  "bloom": 2.4,
+  "finish": {
+    "strength": 0.35,
+    "warmth": 0,
+    "saturation": 1
+  }
+}

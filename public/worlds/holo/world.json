@@ -1,0 +1,16 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "OLYMPIA // command",
+  "sky": {
+    "hour": 12,
+    "clouds": false
+  },
+  "bloom": 1.6,
+  "finish": {
+    "mode": "holo",
+    "paper": "#2a7fff",
+    "ink": "#7fe3ff",
+    "strength": 1
+  }
+}

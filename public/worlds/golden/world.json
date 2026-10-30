@@ -1,0 +1,13 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "your island at golden hour",
+  "sky": {
+    "hour": 17.3
+  },
+  "bloom": 1.4,
+  "finish": {
+    "warmth": 0.14,
+    "saturation": 1.18
+  }
+}

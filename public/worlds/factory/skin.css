@@ -1,0 +1,6 @@
+/* Factory Floor: safety yellow, hazard stripes, stencil type */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&family=Black+Ops+One&display=swap');
+:root { --cream: #f6f5f0; --ink: #1d1d1d; --muted: #66645e; --red: #d39e00; --soft: #ecebe4; --soft2: #e1dfd5; --serif: 'Roboto Mono', monospace; --mono: 'Roboto Mono', monospace; }
+#title .realm { font-family: 'Black Ops One', sans-serif; letter-spacing: .06em; }
+#face, #feed, #card { border-top: 8px solid transparent; border-image: repeating-linear-gradient(-45deg, #f2c230 0 10px, #1d1d1d 10px 20px) 8; }
+#face .doing, #feed li { font-style: normal; }

@@ -1,0 +1,12 @@
+/* Black-figure frieze: terracotta clay, black glaze, meander borders */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
+:root { --cream: #d9844f; --panel: rgba(201, 109, 60, .97); --ink: #17110d; --muted: #4a2a18; --red: #17110d; --soft: rgba(23,17,13,.12); --soft2: rgba(23,17,13,.18); --serif: Cinzel, serif; --sans: Cinzel, serif; --shadow: none; }
+body::before, body::after { content: ''; position: fixed; left: 0; right: 0; height: 18px; z-index: 5; pointer-events: none;
+  background: #17110d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18'%3E%3Cpath d='M0 15h30V3H12v6h12' fill='none' stroke='%23c96d3c' stroke-width='3'/%3E%3C/svg%3E") repeat-x center; }
+body::before { top: 0; } body::after { bottom: 0; }
+#title { top: 30px; } #title .realm { font-family: Cinzel, serif; color: #17110d; text-shadow: none; letter-spacing: .2em; }
+#title .tagline, #clock { color: #17110d; text-shadow: none; }
+#face, #feed, #card, .bubble { border: 2px solid #17110d; border-radius: 4px; }
+#face .doing, #feed li { font-style: normal; }
+#controls button, #controls a { background: rgba(23,17,13,.75); }
+.label { background: rgba(23,17,13,.85); }

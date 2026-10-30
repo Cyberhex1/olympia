@@ -1,0 +1,15 @@
+/* Agora Board: a practical card board on the right, the island in a porthole on the left */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&display=swap');
+:root { --cream: #ffffff; --panel: #ffffff; --ink: #1d2433; --muted: #6b7385; --red: #1f4e8c; --soft: #f1efe8; --soft2: #e4dfd3; --serif: 'DM Sans', sans-serif; --sans: 'DM Sans', sans-serif; --R: min(30vw, 40vh); }
+html, body { background: #f6f3ec; }
+#stage canvas { clip-path: circle(var(--R) at 32% 54%); }
+#stage::after { content: ''; position: fixed; left: calc(32% - var(--R)); top: calc(54% - var(--R)); width: calc(2 * var(--R)); height: calc(2 * var(--R));
+  border-radius: 50%; box-shadow: 0 0 0 10px #fff, 0 0 0 12px #e4dfd3, 0 20px 50px rgba(0,0,0,.18); pointer-events: none; }
+#title, #clock { color: #1d2433; text-shadow: none; }
+#feed { top: 110px; bottom: 20px; right: 20px; width: min(420px, 34vw); max-height: none; border: 1px solid #e4dfd3; }
+#feed li { font-style: normal; background: #f6f3ec; border: 1px solid #e4dfd3; border-radius: 10px; padding: 8px 10px; margin: 6px 0; }
+#feed .feed-head { font-size: 12px; }
+#face .doing { font-style: normal; }
+#controls button, #controls a { background: #1d2433; }
+#usage .utok, #usage .ubar, #status-pill { background: #1d2433; }
+@media (max-width: 720px) { #stage canvas { clip-path: none; } #stage::after { display: none; } #feed { top: auto; width: auto; left: 20px; max-height: 30vh; } }

@@ -1,0 +1,6 @@
+/* Restaurant Kitchen: order tickets on the rail */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+:root { --cream: #fffdf6; --ink: #222; --muted: #6e6a62; --red: #d9382c; --soft: #f5f1e6; --soft2: #ece6d6; --serif: 'Courier Prime', monospace; }
+#feed { border-radius: 2px; background: #fffdf6; border-top: 10px solid #9aa0a6; }
+#feed li { border-top: 1px dashed rgba(0,0,0,.2); }
+#card, .bubble { border-radius: 4px; }

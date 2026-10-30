@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olympia</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,400&family=JetBrains+Mono:wght@500&family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/phone.css" />
+  <script type="importmap">
+    { "imports": {
+        "three": "/vendor/three/build/three.module.js",
+        "three/addons/": "/vendor/three/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div id="stage"></div>
+
+  <div id="bubbles"></div>
+  <div id="labels"></div>
+
+  <header id="title">
+    <div class="realm">OLYMPIA</div>
+    <div class="tagline">your realm, alive</div>
+  </header>
+
+  <div id="status-pill"><span class="dot"></span><span class="txt">CONNECTING</span></div>
+
+  <section id="needs" hidden aria-live="polite"></section>
+  <div id="usage" hidden title="Claude usage"></div>
+
+  <div id="clock">
+    <div class="time">--:--</div>
+    <div class="sky">Athens</div>
+  </div>
+
+  <section id="face" title="Click to follow the messenger">
+    <svg id="face-svg" viewBox="0 0 200 200" aria-label="The messenger's face"></svg>
+    <div class="face-text">
+      <div class="who">CLAUDE <span class="state">· idle</span></div>
+      <div class="doing">Resting at the Acropolis</div>
+      <div class="stats"></div>
+    </div>
+  </section>
+
+  <aside id="feed">
+    <div class="feed-head">VILLAGE CHRONICLE <button id="feed-toggle" title="Hide">–</button></div>
+    <ol></ol>
+  </aside>
+
+  <div id="card" hidden>
+    <button class="close" aria-label="Close">×</button>
+    <div class="card-body"></div>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <nav id="controls">
+    <button data-k="follow" title="Follow the messenger (F)">Follow</button>
+    <button data-k="labels" title="Toggle name plates (L)">Names</button>
+    <button data-k="timelapse" title="Time-lapse the sky (T)">Time</button>
+    <button data-k="recap" title="What got done today (D)">Today</button>
+    <button data-k="reset" title="Reset view (R)">Reset</button>
+    <button data-k="notify" title="Notify me when a thread needs me" hidden>🔔</button>
+    <a href="/list.html" data-k="list" class="btn" title="A plain list, lighter for phones">List</a>
+    <button data-k="settings" title="Settings (S)">⚙ Settings</button>
+  </nav>
+
+  <div id="settings" hidden>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="settings-h" tabindex="-1">
+      <button class="close" data-k="close" aria-label="Close">×</button>
+      <h2 id="settings-h">Settings</h2>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="map">Maps</button>
+        <button role="tab" data-tab="world">Worlds</button>
+        <button role="tab" data-tab="reskin">Reskins</button>
+        <button role="tab" data-tab="phone">Phone</button>
+      </nav>
+      <section class="pages"></section>
+      <div class="foot"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/power.js"></script>
+</body>
+</html>

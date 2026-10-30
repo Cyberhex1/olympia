@@ -1,0 +1,9 @@
+/* Sea Chart: hand-inked parchment */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap');
+:root { --cream: #f1e3bf; --panel: rgba(241, 227, 191, .96); --ink: #3b2a1c; --muted: #7a5a3a; --red: #8e2f1f; --soft: #e6d2a3; --soft2: #dfc792; --serif: 'IM Fell English', Georgia, serif; --sans: 'IM Fell English', Georgia, serif; --shadow: 0 2px 0 #7a5a3a; }
+html, body { background: #ecdcb4; }
+#title .realm { font-family: 'IM Fell English SC', serif; color: #3b2a1c; text-shadow: none; letter-spacing: .12em; }
+#title .tagline, #clock { color: #3b2a1c; text-shadow: none; }
+#face, #feed, #card { border: 1.5px solid #3b2a1c; border-radius: 6px; }
+#controls button, #controls a { background: rgba(59,42,28,.7); }
+.label { background: rgba(59,42,28,.8); }

@@ -1,0 +1,9 @@
+/* Holo Command: the island as a hologram in a control room */
+:root { --cream: #06101f; --panel: rgba(6, 16, 31, .88); --ink: #cfefff; --muted: #6f95b8; --red: #7fe3ff; --gold: #ffc46b; --soft: rgba(127,227,255,.07); --soft2: rgba(127,227,255,.13); --serif: 'JetBrains Mono', monospace; --sans: 'JetBrains Mono', monospace; --shadow: 0 0 0 1px rgba(127,227,255,.35), 0 0 30px rgba(42,127,255,.2); }
+html, body { background: #030812; }
+#title .realm { font-family: 'JetBrains Mono', monospace; letter-spacing: .3em; font-size: 24px; color: #7fe3ff; }
+#face, #feed, #card, .bubble { border-radius: 2px; }
+#face .doing, #feed li { font-style: normal; font-size: 12px; }
+.label { background: rgba(6,16,31,.8); border: 1px solid rgba(127,227,255,.5); color: #7fe3ff; }
+.label:has(.st.waiting) { background: rgba(255,99,99,.25); border-color: #ff6363; color: #ffb3b3; }
+#stage::after { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, rgba(3,8,18,.75)); }

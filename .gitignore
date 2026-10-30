@@ -1,0 +1,36 @@
+node_modules/
+dist/
+
+# personal settings and state (olympia.config.example.json is the shared starting point)
+olympia.config.json
+olympia.config.json.*
+olympia.key
+olympia.code
+olympia.slots.json
+olympia.usage.json
+olympia.widget.json
+*.log
+*.bak*
+
+# local tooling and working folders (not part of the app)
+.claude/
+_backup/
+mockups/
+screenshots/
+
+# Blender files (assets-src/build_island.py writes the .blend) and Python caches
+*.blend
+*.blend1
+__pycache__/
+
+# CC0 source kit, large (link: https://kenney.nl/assets/nature-kit). The models the app uses are in public/
+assets-src/kenney-nature-kit/
+
+# screenshots of a real island (real thread titles); re-shoot in demo mode (?demo=1) before adding images here
+docs/*.jpg
+docs/*.png
+docs/compare/
+
+# internal planning notes
+docs/plan-next-features.md
+docs/release-plan.md

@@ -1,0 +1,74 @@
+{
+  "name": "olympia",
+  "version": "1.0.0",
+  "description": "A living 3D island of your Claude Code work",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron .",
+    "dist": "electron-builder --win",
+    "icon": "node desktop/make-icon.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "license": "MIT",
+  "author": "Cyberhex1",
+  "repository": { "type": "git", "url": "https://github.com/Cyberhex1/olympia.git" },
+  "homepage": "https://github.com/Cyberhex1/olympia",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "private": true,
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "io.github.cyberhex1.olympia",
+    "productName": "Olympia",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "server.js",
+      "lib/**",
+      "public/**",
+      "desktop/**",
+      "!desktop/make-icon.mjs",
+      "olympia.config.example.json",
+      "package.json",
+      {
+        "from": "node_modules/three/examples/jsm",
+        "to": "node_modules/three/examples/jsm"
+      }
+    ],
+    "artifactName": "${productName}-${version}-portable-${arch}.${ext}",
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "desktop/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "electronLanguages": [
+      "en-US"
+    ]
+  }
+}

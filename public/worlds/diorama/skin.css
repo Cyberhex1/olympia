@@ -1,0 +1,7 @@
+/* Diorama Ops: top-down city-builder HUD */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap');
+:root { --cream: #1f2a3a; --panel: rgba(25, 34, 48, .9); --ink: #f2f5fa; --muted: #9fb0c8; --red: #ffc94a; --soft: rgba(255,255,255,.07); --soft2: rgba(255,255,255,.12); --serif: Nunito, sans-serif; --sans: Nunito, sans-serif; --shadow: 0 6px 0 rgba(0,0,0,.35); }
+#title .realm { font-family: Nunito, sans-serif; font-weight: 900; }
+#face, #feed, #card { border: 2px solid #3a4b66; border-radius: 12px; }
+#face .doing, #feed li { font-style: normal; }
+#controls button, #controls a { background: #2c3b52; border-bottom: 3px solid #1a2433; }

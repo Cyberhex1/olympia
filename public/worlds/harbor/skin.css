@@ -1,0 +1,5 @@
+/* Pirate Harbor: sea-chart parchment and rope brown */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap');
+:root { --cream: #f3e4c0; --panel: rgba(243, 228, 192, .96); --ink: #3b2a1c; --muted: #7a5a3a; --red: #9e3a25; --soft: #e9d6a9; --soft2: #e2cc98; --serif: 'IM Fell English', Georgia, serif; }
+#title .realm { font-family: 'Pirata One', serif; letter-spacing: .04em; font-size: 40px; }
+#face, #feed, #card { border: 2px solid #7a5a3a; }

@@ -1,0 +1,4 @@
+/* Haunted Cemetery: dusk purple and ghost green */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Crimson+Text:ital@0;1&display=swap');
+:root { --cream: #1b1626; --panel: rgba(27, 22, 38, .92); --ink: #e8e2f2; --muted: #9a90ad; --red: #9be564; --soft: rgba(255,255,255,.06); --soft2: rgba(255,255,255,.11); --serif: 'Crimson Text', Georgia, serif; --shadow: 0 0 22px rgba(155,229,100,.18), 0 10px 30px rgba(0,0,0,.5); }
+#title .realm { font-family: Creepster, serif; letter-spacing: .06em; color: #c9f59f; font-size: 40px; }

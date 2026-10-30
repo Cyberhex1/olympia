@@ -1,0 +1,9 @@
+/* Night City: dark glass and neon */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&display=swap');
+:root { --cream: #120f22; --panel: rgba(16, 13, 32, .9); --ink: #ece9ff; --muted: #9c95c9; --red: #ff3fa4; --gold: #00e5ff; --soft: rgba(255,255,255,.07); --soft2: rgba(255,255,255,.12); --shadow: 0 0 0 1px rgba(255,63,164,.45), 0 0 24px rgba(255,63,164,.25); }
+#title .realm { font-family: Orbitron, sans-serif; color: #fff; text-shadow: 0 0 12px #ff3fa4, 0 0 28px #ff3fa4; }
+#title .tagline { color: #00e5ff; }
+#face, #feed, #card { border: 1px solid rgba(0,229,255,.35); }
+.bubble { box-shadow: 0 0 14px rgba(0,229,255,.35); }
+.bubble::after { border-top-color: var(--cream); }
+#settings .panel { color: var(--ink); }

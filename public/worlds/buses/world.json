@@ -1,0 +1,617 @@
+{
+  "tagline": "your bus lines, all routes running",
+  "skin": "skin.css",
+  "finish": {
+    "warmth": 0.03,
+    "saturation": 1.12
+  },
+  "names": {
+    "summit": [
+      "Central Depot",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Garage",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Ticket Office",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Radio Mast",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "Lost Property",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Parcel Desk",
+      "Messages and helpers ride out from here"
+    ],
+    "agora": [
+      "The Roundabout",
+      "Where tasks are posted and every line crosses"
+    ],
+    "hotel": [
+      "The Park and Ride",
+      "Visitors leave their cars here: work outside C:\\code. They drive home after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "city-kit-roads/sign-highway",
+          0,
+          0
+        ]
+      ],
+      "scale": 3.26
+    },
+    "forge": {
+      "m": "city-kit-commercial/building-a",
+      "scale": 5.71
+    },
+    "library": {
+      "m": "city-kit-commercial/building-c",
+      "scale": 5.71
+    },
+    "beacon": {
+      "m": "city-kit-commercial/building-e",
+      "scale": 5.71
+    },
+    "archive": {
+      "m": "city-kit-commercial/building-g",
+      "scale": 5.71
+    },
+    "aviary": {
+      "m": "city-kit-commercial/building-b",
+      "scale": 5.71
+    },
+    "agora": {
+      "m": "city-kit-roads/road-roundabout",
+      "scale": 6.12
+    },
+    "hotel": {
+      "parts": [
+        [
+          "city-kit-roads/road-sign-street",
+          0,
+          0
+        ]
+      ],
+      "scale": 4.49
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "@shelter:#d94dbf",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#e64033",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#3380e6",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#f2b31a",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#40b359",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#26b3cc",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      },
+      {
+        "parts": [
+          [
+            "@shelter:#9a66e6",
+            0,
+            0
+          ]
+        ],
+        "scale": 2.04
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#6f9c4f",
+        "#a9cf72"
+      ],
+      "Mountain": [
+        "#6b9a50",
+        "#b2cf86"
+      ]
+    },
+    "path": "#4c4f58",
+    "cap": "#5a5d66",
+    "stone": "#f2d230",
+    "water": "#58b3df"
+  },
+  "scatter": [
+    {
+      "models": [
+        "city-kit-suburban/building-type-a",
+        "city-kit-suburban/building-type-b",
+        "city-kit-suburban/building-type-d",
+        "city-kit-suburban/building-type-g",
+        "city-kit-suburban/building-type-k"
+      ],
+      "count": 18,
+      "size": [
+        2.4,
+        3.2
+      ],
+      "pad": 1.8
+    },
+    {
+      "models": [
+        "city-kit-suburban/tree-large",
+        "city-kit-suburban/tree-small"
+      ],
+      "count": 46,
+      "size": [
+        1.8,
+        3.0
+      ],
+      "pad": 0.9
+    },
+    {
+      "models": [
+        "car-kit/sedan",
+        "car-kit/taxi",
+        "car-kit/suv",
+        "car-kit/hatchback-sports"
+      ],
+      "count": 20,
+      "size": [
+        0.8,
+        1.0
+      ],
+      "pad": 0.7
+    },
+    {
+      "models": [
+        "city-kit-roads/light-square",
+        "city-kit-roads/road-sign-street",
+        "city-kit-suburban/fence-1x3"
+      ],
+      "count": 24,
+      "size": [
+        1.2,
+        2.2
+      ],
+      "pad": 0.5
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "city-kit-suburban/building-type-c",
+        "city-kit-suburban/building-type-e",
+        "city-kit-suburban/building-type-r"
+      ],
+      "count": 14,
+      "size": [
+        1.8,
+        2.4
+      ]
+    },
+    {
+      "models": [
+        "city-kit-suburban/tree-small",
+        "city-kit-suburban/tree-large"
+      ],
+      "count": 26,
+      "size": [
+        1.4,
+        2.2
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-female-b",
+    "mini-characters/character-male-c",
+    "mini-characters/character-female-d",
+    "mini-characters/character-male-e",
+    "mini-characters/character-female-f",
+    "mini-characters/character-male-a"
+  ],
+  "terrain": {
+    "model": "buses.glb",
+    "y": 0.1,
+    "radius": 50,
+    "layout": {
+      "summit": [
+        38.35,
+        0.1,
+        1.63
+      ],
+      "tools": {
+        "forge": {
+          "theta": 169.38,
+          "r": 16.604,
+          "face": 270.0
+        },
+        "library": {
+          "theta": 212.01,
+          "r": 9.623,
+          "face": 270.0
+        },
+        "beacon": {
+          "theta": 20.56,
+          "r": 8.715,
+          "face": 270.0
+        },
+        "archive": {
+          "theta": 339.44,
+          "r": 17.43,
+          "face": 270.0
+        },
+        "aviary": {
+          "theta": 0.0,
+          "r": 13.056,
+          "face": 270.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 167.69,
+          "r": 34.452,
+          "face": 270.0
+        },
+        {
+          "theta": 141.34,
+          "r": 11.756,
+          "face": 270.0
+        },
+        {
+          "theta": 25.64,
+          "r": 16.971,
+          "face": 270.0
+        },
+        {
+          "theta": 206.98,
+          "r": 37.771,
+          "face": 270.0
+        },
+        {
+          "theta": 298.18,
+          "r": 19.44,
+          "face": 270.0
+        },
+        {
+          "theta": 333.02,
+          "r": 37.771,
+          "face": 270.0
+        },
+        {
+          "theta": 156.7,
+          "r": 43.314,
+          "face": 90.0
+        },
+        {
+          "theta": 131.76,
+          "r": 22.972,
+          "face": 90.0
+        },
+        {
+          "theta": 61.82,
+          "r": 19.44,
+          "face": 90.0
+        },
+        {
+          "theta": 26.98,
+          "r": 37.771,
+          "face": 90.0
+        },
+        {
+          "theta": 205.64,
+          "r": 16.971,
+          "face": 90.0
+        },
+        {
+          "theta": 334.36,
+          "r": 16.971,
+          "face": 90.0
+        },
+        {
+          "theta": 190.46,
+          "r": 40.452,
+          "face": 90.0
+        }
+      ],
+      "agora": {
+        "theta": 270.0,
+        "r": 12.24
+      },
+      "hotel": {
+        "theta": 169.42,
+        "r": 37.77,
+        "face": 270.0
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -42.84,
+            12.24
+          ],
+          [
+            -33.66,
+            12.24
+          ],
+          [
+            -24.48,
+            12.24
+          ],
+          [
+            -15.3,
+            12.24
+          ],
+          [
+            -9.18,
+            12.24
+          ],
+          [
+            0.0,
+            12.24
+          ],
+          [
+            9.18,
+            12.24
+          ],
+          [
+            15.3,
+            12.24
+          ],
+          [
+            24.48,
+            12.24
+          ],
+          [
+            33.66,
+            12.24
+          ],
+          [
+            42.84,
+            12.24
+          ],
+          [
+            -42.84,
+            -12.24
+          ],
+          [
+            -33.66,
+            -12.24
+          ],
+          [
+            -24.48,
+            -12.24
+          ],
+          [
+            -15.3,
+            -12.24
+          ],
+          [
+            -9.18,
+            -12.24
+          ],
+          [
+            0.0,
+            -12.24
+          ],
+          [
+            9.18,
+            -12.24
+          ],
+          [
+            15.3,
+            -12.24
+          ],
+          [
+            24.48,
+            -12.24
+          ],
+          [
+            33.66,
+            -12.24
+          ],
+          [
+            42.84,
+            -12.24
+          ],
+          [
+            -24.48,
+            -0.0
+          ],
+          [
+            0.0,
+            -0.0
+          ],
+          [
+            24.48,
+            -0.0
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            2,
+            22
+          ],
+          [
+            22,
+            13
+          ],
+          [
+            5,
+            23
+          ],
+          [
+            23,
+            16
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            24,
+            19
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      13.6,
+      78.2,
+      95.2
+    ],
+    "target": [
+      0.0,
+      -2.72,
+      -2.04
+    ],
+    "fov": 38.7
+  },
+  "sky": {
+    "hour": 15.2
+  },
+  "light": {
+    "exposure": 1.25,
+    "hemi": 1.45,
+    "env": 1.45
+  }
+}

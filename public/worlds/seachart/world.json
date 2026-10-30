@@ -1,0 +1,131 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "a chart of your waters",
+  "sky": {
+    "hour": 13
+  },
+  "bloom": 0.2,
+  "camera": {
+    "pos": [
+      0,
+      150,
+      52
+    ],
+    "target": [
+      0,
+      0,
+      3
+    ],
+    "fov": 34
+  },
+  "finish": {
+    "mode": "chart",
+    "paper": "#ecdcb4",
+    "ink": "#3b2a1c",
+    "strength": 0.9,
+    "tilt": 0.25
+  },
+  "terrain": {
+    "model": "seachart.glb",
+    "y": 0.12,
+    "radius": 32,
+    "layout": {
+      "summit": [
+        0,
+        0.12,
+        0
+      ],
+      "tools": {
+        "forge": {
+          "theta": 160,
+          "r": 14.2
+        },
+        "library": {
+          "theta": 215,
+          "r": 14.2
+        },
+        "beacon": {
+          "theta": 270,
+          "r": 14.2
+        },
+        "archive": {
+          "theta": 325,
+          "r": 14.2
+        },
+        "aviary": {
+          "theta": 20,
+          "r": 14.2
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 140,
+          "r": 24
+        },
+        {
+          "theta": 190,
+          "r": 24.5
+        },
+        {
+          "theta": 240,
+          "r": 24
+        },
+        {
+          "theta": 290,
+          "r": 24.5
+        },
+        {
+          "theta": 340,
+          "r": 24
+        },
+        {
+          "theta": 165,
+          "r": 28
+        },
+        {
+          "theta": 215,
+          "r": 28.5
+        },
+        {
+          "theta": 265,
+          "r": 28
+        },
+        {
+          "theta": 315,
+          "r": 28.5
+        },
+        {
+          "theta": 10,
+          "r": 26
+        },
+        {
+          "theta": 30,
+          "r": 27.5
+        },
+        {
+          "theta": 125,
+          "r": 27.5
+        },
+        {
+          "theta": 355,
+          "r": 27
+        }
+      ],
+      "agora": {
+        "theta": 52,
+        "r": 22.5
+      },
+      "hotel": {
+        "theta": 77,
+        "r": 26.4
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      },
+      "ringRoad": 18.6
+    }
+  }
+}

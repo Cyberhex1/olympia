@@ -1,0 +1,192 @@
+{
+  "version": 2,
+  "worlds": [
+    {
+      "id": "olympus",
+      "name": "Olympus",
+      "group": "reskin",
+      "engine": "olympus",
+      "blurb": "The floating island: Mount Olympus, the Acropolis and Greek buildings for each project.",
+      "preview": "/worlds/previews/olympus.png"
+    },
+    {
+      "id": "village",
+      "name": "Cozy Village",
+      "group": "reskin",
+      "engine": "village",
+      "blurb": "The same island as a cozy village: timber cottages, the Hilltop Hall and a fox for a messenger.",
+      "preview": "/worlds/previews/village.png"
+    },
+    {
+      "id": "golden",
+      "name": "Golden Hour",
+      "group": "reskin",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "Always early evening: warm light, cream cards and a gold-trimmed messenger.",
+      "preview": "/worlds/golden/preview.jpg"
+    },
+    {
+      "id": "nightwatch",
+      "name": "Night Watch",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "Always night: calm and ambient, lit windows and lantern-gold labels.",
+      "preview": "/worlds/nightwatch/preview.jpg"
+    },
+    {
+      "id": "blackfigure",
+      "name": "Black-figure Vase",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "The island painted like a Greek vase: black figures on terracotta, meander borders.",
+      "preview": "/worlds/blackfigure/preview.jpg"
+    },
+    {
+      "id": "seachart",
+      "name": "Sea Chart",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "A hand-inked map seen from above, on parchment.",
+      "preview": "/worlds/seachart/preview.jpg"
+    },
+    {
+      "id": "diorama",
+      "name": "Diorama Ops",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "Top-down tilt-shift with a city-builder HUD.",
+      "preview": "/worlds/diorama/preview.jpg"
+    },
+    {
+      "id": "agoraboard",
+      "name": "Agora Board",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "The practical one: a card board of what is happening, the island in a porthole beside it.",
+      "preview": "/worlds/agoraboard/preview.jpg"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle's Scroll",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "Dusk, with the day kept on an unrolled scroll.",
+      "preview": "/worlds/oracle/preview.jpg"
+    },
+    {
+      "id": "elevation",
+      "name": "In Elevation",
+      "group": "map",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "The island side-on, in pastels.",
+      "preview": "/worlds/elevation/preview.jpg"
+    },
+    {
+      "id": "holo",
+      "name": "Holo Command",
+      "group": "reskin",
+      "engine": "olympus",
+      "pack": true,
+      "blurb": "The island as a hologram in a control room.",
+      "preview": "/worlds/holo/preview.jpg"
+    },
+    {
+      "id": "market",
+      "name": "Farmers Market",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Stalls are projects and vendors are threads; a vendor waving needs you.",
+      "preview": "/worlds/market/preview.jpg"
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Night City",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Neon towers are projects and the people on the streets are threads, always after dark.",
+      "preview": "/worlds/cyberpunk/preview.jpg"
+    },
+    {
+      "id": "office",
+      "name": "The Office",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Desk pods are projects and coworkers are threads; the stand-up corner holds the board.",
+      "preview": "/worlds/office/preview.jpg"
+    },
+    {
+      "id": "buses",
+      "name": "Bus Lines",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Each project is a stop on a little road; riders are threads and the depot sits on the hill.",
+      "preview": "/worlds/buses/preview.jpg"
+    },
+    {
+      "id": "space",
+      "name": "Space Station",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Consoles and bays are projects and the crew are threads, holding orbit at midnight.",
+      "preview": "/worlds/space/preview.jpg"
+    },
+    {
+      "id": "harbor",
+      "name": "Pirate Harbor",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Ships are projects and sailors are threads; the lighthouse fort keeps watch from the peak.",
+      "preview": "/worlds/harbor/preview.jpg"
+    },
+    {
+      "id": "park",
+      "name": "Theme Park",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Rides are projects and guests are threads; the Big Top stands on the hill.",
+      "preview": "/worlds/park/preview.jpg"
+    },
+    {
+      "id": "kitchen",
+      "name": "Restaurant Kitchen",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Cooking stations are projects and chefs are threads; orders go up on the ticket rail.",
+      "preview": "/worlds/kitchen/preview.jpg"
+    },
+    {
+      "id": "graveyard",
+      "name": "Haunted Cemetery",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Crypts are projects and ghosts are threads, wandering the hill at night.",
+      "preview": "/worlds/graveyard/preview.jpg"
+    },
+    {
+      "id": "factory",
+      "name": "Factory Floor",
+      "group": "world",
+      "engine": "kit",
+      "pack": true,
+      "blurb": "Production lines are projects and workers are threads; the control room runs the plant.",
+      "preview": "/worlds/factory/preview.jpg"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/* The Office: clean white panels and a blue accent */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&display=swap');
+:root { --cream: #ffffff; --panel: rgba(255,255,255,.96); --ink: #1d2433; --muted: #6b7385; --red: #2f6fde; --soft: #f1f4f9; --soft2: #e6ebf3; --serif: 'DM Sans', sans-serif; --sans: 'DM Sans', sans-serif; }
+#face, #feed, #card, .bubble { border-radius: 10px; }
+#face .doing, #feed li { font-style: normal; }

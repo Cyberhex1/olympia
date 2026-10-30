@@ -1,0 +1,5 @@
+/* Space Station: dark console panels with cyan readouts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700;800&display=swap');
+:root { --cream: #0c1526; --panel: rgba(10, 18, 34, .9); --ink: #dcecff; --muted: #7d93b5; --red: #7fe3ff; --gold: #ffb547; --soft: rgba(127,227,255,.08); --soft2: rgba(127,227,255,.14); --serif: 'Exo 2', sans-serif; --sans: 'Exo 2', sans-serif; --shadow: 0 0 0 1px rgba(127,227,255,.3), 0 10px 30px rgba(0,0,0,.5); }
+#title .realm { font-family: 'Exo 2', sans-serif; letter-spacing: .12em; }
+#face .doing, #feed li { font-style: normal; }

@@ -1,0 +1,615 @@
+{
+  "tagline": "your cemetery, restless tonight",
+  "skin": "skin.css",
+  "sky": {
+    "hour": 21.8,
+    "cloud": "#4b4f6a",
+    "nightCloud": "#3a3d55"
+  },
+  "bloom": 0.5,
+  "finish": {
+    "ink": "#0b0912",
+    "strength": 0.55,
+    "warmth": -0.03,
+    "saturation": 0.9
+  },
+  "names": {
+    "summit": [
+      "The Mausoleum",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Gravedigger's Shed",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Chapel",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Bell Tower",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Ossuary",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Crow Perch",
+      "Messages and helpers fly out from here"
+    ],
+    "agora": [
+      "The Altar",
+      "Where tasks are pinned and the spirits gather"
+    ],
+    "hotel": [
+      "The Guest Crypts",
+      "Visiting ghosts rest here: work outside C:\\code. They fade after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "graveyard-kit/candle-multiple",
+          0,
+          0
+        ]
+      ],
+      "scale": 4.69
+    },
+    "forge": {
+      "parts": [
+        [
+          "graveyard-kit/fire-basket",
+          0,
+          0
+        ]
+      ],
+      "scale": 5.16
+    },
+    "library": {
+      "parts": [
+        [
+          "graveyard-kit/altar-wood",
+          0,
+          0
+        ]
+      ],
+      "scale": 5.16
+    },
+    "beacon": {
+      "parts": [
+        [
+          "graveyard-kit/pillar-obelisk",
+          0,
+          0
+        ]
+      ],
+      "scale": 5.16
+    },
+    "archive": {
+      "parts": [
+        [
+          "graveyard-kit/urn-square",
+          0,
+          0
+        ],
+        [
+          "graveyard-kit/urn-round",
+          0.6,
+          0.1
+        ]
+      ],
+      "scale": 5.16
+    },
+    "aviary": {
+      "parts": [
+        [
+          "graveyard-kit/lantern-candle",
+          0,
+          0
+        ],
+        [
+          "graveyard-kit/cross-column",
+          0.6,
+          0
+        ]
+      ],
+      "scale": 5.16
+    },
+    "agora": {
+      "parts": [
+        [
+          "graveyard-kit/bench",
+          0,
+          0
+        ],
+        [
+          "graveyard-kit/shovel-dirt",
+          0.8,
+          0.2
+        ]
+      ],
+      "scale": 5.16
+    },
+    "hotel": {
+      "parts": [
+        [
+          "graveyard-kit/coffin-old",
+          0,
+          0
+        ],
+        [
+          "graveyard-kit/coffin",
+          0.9,
+          0.1
+        ]
+      ],
+      "scale": 5.16
+    },
+    "projects": [
+      {
+        "m": "graveyard-kit/crypt",
+        "scale": 6.1
+      },
+      {
+        "m": "graveyard-kit/crypt-large",
+        "scale": 4.69
+      },
+      {
+        "m": "graveyard-kit/crypt-small",
+        "scale": 6.1
+      },
+      {
+        "m": "graveyard-kit/crypt-a",
+        "scale": 5.63
+      },
+      {
+        "m": "graveyard-kit/crypt-b",
+        "scale": 5.63
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#1f2a24",
+        "#4a5b45"
+      ],
+      "Mountain": [
+        "#232c27",
+        "#55634f"
+      ],
+      "IslandSides": "#7b7591"
+    },
+    "path": "#6d6a73",
+    "cap": "#4a4852",
+    "stone": "#7b7884",
+    "water": "#3f8f6a",
+    "islet": [
+      "#3b4a3b",
+      "#4a4552",
+      "#33303d",
+      "#2a3a2c"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "graveyard-kit/gravestone-round",
+        "graveyard-kit/gravestone-cross",
+        "graveyard-kit/gravestone-bevel",
+        "graveyard-kit/gravestone-decorative",
+        "graveyard-kit/gravestone-roof",
+        "graveyard-kit/gravestone-broken"
+      ],
+      "count": 90,
+      "size": [
+        0.7,
+        1.1
+      ],
+      "pad": 0.4
+    },
+    {
+      "models": [
+        "graveyard-kit/pine",
+        "graveyard-kit/pine-crooked",
+        "graveyard-kit/pine-fall"
+      ],
+      "count": 34,
+      "size": [
+        2.2,
+        3.4
+      ],
+      "pad": 1.0
+    },
+    {
+      "models": [
+        "graveyard-kit/lightpost-single",
+        "graveyard-kit/lantern-glass",
+        "graveyard-kit/pumpkin-carved",
+        "graveyard-kit/pumpkin-tall-carved",
+        "graveyard-kit/urn-round"
+      ],
+      "count": 32,
+      "size": [
+        0.6,
+        1.8
+      ],
+      "pad": 0.5
+    },
+    {
+      "models": [
+        "graveyard-kit/iron-fence",
+        "graveyard-kit/iron-fence-damaged"
+      ],
+      "count": 24,
+      "size": [
+        0.8,
+        1.0
+      ],
+      "pad": 0.5
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "graveyard-kit/pine-crooked",
+        "graveyard-kit/pine"
+      ],
+      "count": 26,
+      "size": [
+        1.6,
+        2.6
+      ]
+    },
+    {
+      "models": [
+        "graveyard-kit/gravestone-cross-large",
+        "graveyard-kit/rocks-tall"
+      ],
+      "count": 18,
+      "size": [
+        0.8,
+        1.6
+      ]
+    }
+  ],
+  "residents": [
+    "graveyard-kit/character-ghost",
+    "graveyard-kit/character-skeleton",
+    "graveyard-kit/character-vampire",
+    "graveyard-kit/character-zombie",
+    "graveyard-kit/character-keeper"
+  ],
+  "terrain": {
+    "fill": {
+      "sky": "#8f9ad8",
+      "ground": "#22283a",
+      "power": 1.2
+    },
+    "lampColor": "#ffb060",
+    "lampPower": 70,
+    "model": "graveyard.glb",
+    "y": 0.1,
+    "radius": 34,
+    "layout": {
+      "summit": [
+        0.0,
+        0.1,
+        -15.24
+      ],
+      "tools": {
+        "forge": {
+          "theta": 164.05,
+          "r": 6.828,
+          "face": 270.0
+        },
+        "library": {
+          "theta": 15.95,
+          "r": 6.828,
+          "face": 270.0
+        },
+        "beacon": {
+          "theta": 246.19,
+          "r": 17.428,
+          "face": 270.0
+        },
+        "archive": {
+          "theta": 293.81,
+          "r": 17.428,
+          "face": 270.0
+        },
+        "aviary": {
+          "theta": 71.57,
+          "r": 17.796,
+          "face": 270.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 212.35,
+          "r": 16.653,
+          "face": 270.0
+        },
+        {
+          "theta": 327.65,
+          "r": 16.653,
+          "face": 270.0
+        },
+        {
+          "theta": 166.87,
+          "r": 14.447,
+          "face": 270.0
+        },
+        {
+          "theta": 13.13,
+          "r": 14.447,
+          "face": 270.0
+        },
+        {
+          "theta": 123.21,
+          "r": 15.414,
+          "face": 270.0
+        },
+        {
+          "theta": 56.79,
+          "r": 15.414,
+          "face": 270.0
+        },
+        {
+          "theta": 171.7,
+          "r": 22.748,
+          "face": 270.0
+        },
+        {
+          "theta": 8.3,
+          "r": 22.748,
+          "face": 270.0
+        },
+        {
+          "theta": 206.08,
+          "r": 24.539,
+          "face": 270.0
+        },
+        {
+          "theta": 333.92,
+          "r": 24.539,
+          "face": 270.0
+        },
+        {
+          "theta": 250.11,
+          "r": 23.439,
+          "face": 270.0
+        },
+        {
+          "theta": 289.89,
+          "r": 23.439,
+          "face": 270.0
+        },
+        {
+          "theta": 120.58,
+          "r": 23.968,
+          "face": 270.0
+        }
+      ],
+      "agora": {
+        "theta": 81.09,
+        "r": 24.21,
+        "face": 270.0
+      },
+      "hotel": {
+        "theta": 102.34,
+        "r": 30.724,
+        "face": 126.38
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            0.0,
+            30.48
+          ],
+          [
+            0.0,
+            20.17
+          ],
+          [
+            0.0,
+            8.44
+          ],
+          [
+            0.0,
+            -4.69
+          ],
+          [
+            0.0,
+            -11.72
+          ],
+          [
+            -18.76,
+            -4.69
+          ],
+          [
+            -9.38,
+            -4.69
+          ],
+          [
+            9.38,
+            -4.69
+          ],
+          [
+            18.76,
+            -4.69
+          ],
+          [
+            -25.79,
+            8.44
+          ],
+          [
+            -18.29,
+            8.44
+          ],
+          [
+            -11.26,
+            8.44
+          ],
+          [
+            11.26,
+            8.44
+          ],
+          [
+            18.29,
+            8.44
+          ],
+          [
+            25.79,
+            8.44
+          ],
+          [
+            -18.76,
+            -18.29
+          ],
+          [
+            -7.5,
+            -18.29
+          ],
+          [
+            7.5,
+            -18.29
+          ],
+          [
+            18.76,
+            -18.29
+          ],
+          [
+            -16.88,
+            20.17
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            4,
+            17
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            15,
+            5
+          ],
+          [
+            18,
+            8
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            19,
+            10
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      18.76,
+      49.24,
+      72.69
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.88
+    ],
+    "fov": 34.7
+  },
+  "light": {
+    "exposure": 0.7,
+    "hemi": 0.85,
+    "env": 0.85
+  }
+}

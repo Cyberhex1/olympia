@@ -1,0 +1,24 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "your island, from above",
+  "camera": {
+    "pos": [
+      0,
+      88,
+      26
+    ],
+    "target": [
+      0,
+      0,
+      2
+    ],
+    "fov": 32
+  },
+  "finish": {
+    "tilt": 0.38,
+    "blur": 2.2,
+    "saturation": 1.25,
+    "warmth": 0.04
+  }
+}

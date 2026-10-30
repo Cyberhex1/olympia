@@ -1,0 +1,7 @@
+/* Oracle's Scroll: the day as an unrolled scroll at dusk */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&display=swap');
+:root { --cream: #efe0bd; --panel: #efe0bd; --ink: #3b2a1c; --muted: #7a5a3a; --red: #9e3a25; --gold: #b5852e; --soft: #e5d2a6; --soft2: #dcc595; --serif: Spectral, Georgia, serif; --sans: Spectral, Georgia, serif; }
+#feed { width: 340px; max-height: 56vh; border-radius: 4px; border-top: 14px solid #8a6136; border-bottom: 14px solid #8a6136; }
+#feed .feed-head { justify-content: center; font-family: Spectral, serif; font-size: 13px; letter-spacing: .3em; }
+#card { border-radius: 4px; border-top: 12px solid #8a6136; border-bottom: 12px solid #8a6136; }
+#title .realm { font-family: Spectral, serif; font-weight: 700; letter-spacing: .2em; }

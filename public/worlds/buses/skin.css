@@ -1,0 +1,7 @@
+/* Bus Lines: departure-board yellow on black */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap');
+:root { --cream: #fffdf5; --ink: #1b1b1b; --muted: #6a6a6a; --red: #e0a800; --soft: #f4f1e6; --soft2: #ebe6d4; --serif: 'Barlow Condensed', sans-serif; }
+#feed { background: #141414; }
+#feed li { color: #ffd23f; border-top-color: rgba(255,255,255,.08); font-family: 'Barlow Condensed', sans-serif; font-size: 15px; }
+#feed .feed-head { color: #ffd23f; }
+#title .realm { font-family: 'Barlow Condensed', sans-serif; letter-spacing: .04em; }

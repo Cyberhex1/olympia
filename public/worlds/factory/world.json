@@ -1,0 +1,882 @@
+{
+  "tagline": "your factory, lines running",
+  "skin": "skin.css",
+  "finish": {
+    "warmth": 0.0,
+    "saturation": 1.05
+  },
+  "names": {
+    "summit": [
+      "The Control Room",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Press Shop",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Parts Store",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Scanner Bay",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Warehouse",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "Shipping",
+      "Messages and helpers ship out from here"
+    ],
+    "agora": [
+      "The Andon Board",
+      "Where tasks are posted and shifts gather"
+    ],
+    "hotel": [
+      "The Loading Dock",
+      "Visiting trucks wait here: work outside C:\\code. They leave after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "factory-kit/screen-wide",
+          0,
+          0
+        ]
+      ],
+      "scale": 3.4
+    },
+    "forge": {
+      "parts": [
+        [
+          "factory-kit/machine-fortified",
+          0,
+          0
+        ],
+        [
+          "factory-kit/piston-round",
+          1.2,
+          0
+        ],
+        [
+          "factory-kit/hopper-high-round",
+          -1.2,
+          0
+        ]
+      ],
+      "scale": 3.4
+    },
+    "library": {
+      "parts": [
+        [
+          "factory-kit/box-large",
+          0,
+          0
+        ],
+        [
+          "factory-kit/box-wide",
+          1.1,
+          0
+        ],
+        [
+          "factory-kit/box-small",
+          0.5,
+          0.9
+        ]
+      ],
+      "scale": 3.4
+    },
+    "beacon": {
+      "parts": [
+        [
+          "factory-kit/scanner-high",
+          0,
+          0
+        ],
+        [
+          "factory-kit/conveyor-long-stripe-sides",
+          0,
+          0.1,
+          90
+        ]
+      ],
+      "scale": 3.4
+    },
+    "archive": {
+      "parts": [
+        [
+          "factory-kit/structure-high",
+          0,
+          0
+        ],
+        [
+          "factory-kit/box-large",
+          1.2,
+          0.3
+        ],
+        [
+          "factory-kit/box-large",
+          1.2,
+          -0.8
+        ]
+      ],
+      "scale": 3.4
+    },
+    "aviary": {
+      "parts": [
+        [
+          "factory-kit/crane",
+          0,
+          0
+        ],
+        [
+          "factory-kit/box-long",
+          1.0,
+          0.4
+        ]
+      ],
+      "scale": 3.4
+    },
+    "agora": {
+      "parts": [
+        [
+          "factory-kit/floor-large",
+          0,
+          0,
+          0,
+          2.2
+        ],
+        [
+          "factory-kit/screen-hanging-wide",
+          0,
+          -0.5,
+          0,
+          1,
+          0.6
+        ],
+        [
+          "factory-kit/indicator-special-cross",
+          0,
+          0.8
+        ]
+      ],
+      "scale": 3.4
+    },
+    "hotel": {
+      "parts": [
+        [
+          "car-kit/truck",
+          0,
+          0,
+          0,
+          0.6
+        ],
+        [
+          "car-kit/truck",
+          2.0,
+          0,
+          0,
+          0.6
+        ]
+      ],
+      "scale": 3.4
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "factory-kit/machine",
+            -2.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            -1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/hopper-square",
+            2.0,
+            0
+          ],
+          [
+            "factory-kit/robot-arm-a",
+            0.6,
+            -0.95,
+            180,
+            0.8
+          ],
+          [
+            "factory-kit/box-small",
+            -0.5,
+            0,
+            5,
+            0.9,
+            0.4
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "factory-kit/machine",
+            -2.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor-stripe",
+            -1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor-stripe",
+            0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor-stripe",
+            1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/hopper-square",
+            2.0,
+            0
+          ],
+          [
+            "factory-kit/robot-arm-a",
+            0.6,
+            -0.95,
+            180,
+            0.8
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "factory-kit/machine",
+            -2.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            -1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/conveyor",
+            1.0,
+            0,
+            90
+          ],
+          [
+            "factory-kit/hopper-square",
+            2.0,
+            0
+          ],
+          [
+            "factory-kit/robot-arm-b",
+            0.6,
+            -0.95,
+            180,
+            0.8
+          ],
+          [
+            "factory-kit/box-small",
+            0.4,
+            0,
+            -6,
+            0.9,
+            0.4
+          ]
+        ],
+        "scale": 3.4
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#7d7f84",
+        "#c4c3bd"
+      ],
+      "Mountain": [
+        "#4c4a48",
+        "#8f8a82"
+      ],
+      "IslandSides": "#b8b0a6"
+    },
+    "path": "#f2c230",
+    "cap": "#9a9a9a",
+    "stone": "#3d3d42",
+    "water": "#5c8aa8",
+    "islet": [
+      "#a7a6a0",
+      "#8f8a82",
+      "#6b6660",
+      "#f2c230"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "factory-kit/box-large",
+        "factory-kit/box-small",
+        "factory-kit/box-wide",
+        "factory-kit/box-long"
+      ],
+      "count": 44,
+      "size": [
+        0.6,
+        1.2
+      ],
+      "pad": 0.5
+    },
+    {
+      "models": [
+        "factory-kit/pipe-large",
+        "factory-kit/pipe-large-bend",
+        "factory-kit/cog-a",
+        "factory-kit/cone"
+      ],
+      "count": 34,
+      "size": [
+        0.6,
+        1.4
+      ],
+      "pad": 0.5
+    },
+    {
+      "models": [
+        "factory-kit/structure-yellow-high",
+        "factory-kit/crane-lift",
+        "factory-kit/hopper-round"
+      ],
+      "count": 16,
+      "size": [
+        1.8,
+        2.8
+      ],
+      "pad": 0.9
+    },
+    {
+      "models": [
+        "car-kit/tractor-shovel",
+        "car-kit/truck-flat",
+        "car-kit/delivery-flat"
+      ],
+      "count": 10,
+      "size": [
+        0.9,
+        1.2
+      ],
+      "pad": 0.8
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "factory-kit/pipe-large-long",
+        "factory-kit/hopper-high-round",
+        "factory-kit/structure-medium"
+      ],
+      "count": 26,
+      "size": [
+        1.2,
+        2.4
+      ]
+    },
+    {
+      "models": [
+        "factory-kit/box-large",
+        "factory-kit/box-wide"
+      ],
+      "count": 18,
+      "size": [
+        0.8,
+        1.2
+      ]
+    }
+  ],
+  "residents": [
+    "mini-market/character-employee",
+    "mini-characters/character-male-a",
+    "mini-characters/character-female-b",
+    "mini-characters/character-male-e",
+    "mini-characters/character-female-d"
+  ],
+  "terrain": {
+    "model": "factory.glb",
+    "y": 0.54,
+    "radius": 36,
+    "layout": {
+      "summit": [
+        18.02,
+        5.85,
+        13.94
+      ],
+      "tools": {
+        "forge": {
+          "theta": 124.56,
+          "r": 37.158,
+          "face": 90.0
+        },
+        "library": {
+          "theta": 109.57,
+          "r": 32.477,
+          "face": 90.0
+        },
+        "beacon": {
+          "theta": 91.27,
+          "r": 30.608,
+          "face": 90.0
+        },
+        "archive": {
+          "theta": 72.72,
+          "r": 32.047,
+          "face": 90.0
+        },
+        "aviary": {
+          "theta": 57.2,
+          "r": 36.404,
+          "face": 90.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 126.87,
+          "r": 23.8,
+          "face": 90
+        },
+        {
+          "theta": 81.87,
+          "r": 19.233,
+          "face": 90
+        },
+        {
+          "theta": 138.62,
+          "r": 19.031,
+          "face": 90
+        },
+        {
+          "theta": 77.8,
+          "r": 12.871,
+          "face": 90
+        },
+        {
+          "theta": 156.8,
+          "r": 15.536,
+          "face": 90
+        },
+        {
+          "theta": 66.04,
+          "r": 6.697,
+          "face": 90
+        },
+        {
+          "theta": 181.36,
+          "r": 14.284,
+          "face": 90
+        },
+        {
+          "theta": 352.87,
+          "r": 2.741,
+          "face": 90
+        },
+        {
+          "theta": 205.46,
+          "r": 15.816,
+          "face": 90
+        },
+        {
+          "theta": 291.8,
+          "r": 7.324,
+          "face": 90
+        },
+        {
+          "theta": 222.88,
+          "r": 19.487,
+          "face": 90
+        },
+        {
+          "theta": 281.59,
+          "r": 13.536,
+          "face": 90
+        },
+        {
+          "theta": 319.24,
+          "r": 26.036,
+          "face": 90
+        }
+      ],
+      "agora": {
+        "theta": 31.33,
+        "r": 36.619,
+        "face": 0.0
+      },
+      "hotel": {
+        "theta": 342.76,
+        "r": 20.648,
+        "face": 270.0
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -23.46,
+            26.86
+          ],
+          [
+            -23.46,
+            15.81
+          ],
+          [
+            -23.46,
+            9.35
+          ],
+          [
+            -23.46,
+            2.89
+          ],
+          [
+            -23.46,
+            -3.57
+          ],
+          [
+            -23.46,
+            -10.03
+          ],
+          [
+            -23.46,
+            -16.49
+          ],
+          [
+            -5.78,
+            26.86
+          ],
+          [
+            -5.78,
+            15.81
+          ],
+          [
+            -5.78,
+            9.35
+          ],
+          [
+            -5.78,
+            2.89
+          ],
+          [
+            -5.78,
+            -3.57
+          ],
+          [
+            -5.78,
+            -10.03
+          ],
+          [
+            -5.78,
+            -16.49
+          ],
+          [
+            11.56,
+            26.86
+          ],
+          [
+            11.56,
+            15.81
+          ],
+          [
+            11.56,
+            9.35
+          ],
+          [
+            11.56,
+            2.89
+          ],
+          [
+            11.56,
+            -3.57
+          ],
+          [
+            11.56,
+            -10.03
+          ],
+          [
+            11.56,
+            -16.49
+          ],
+          [
+            30.94,
+            26.86
+          ],
+          [
+            30.94,
+            15.81
+          ],
+          [
+            30.94,
+            9.35
+          ],
+          [
+            30.94,
+            2.89
+          ],
+          [
+            30.94,
+            -3.57
+          ],
+          [
+            30.94,
+            -10.03
+          ],
+          [
+            30.94,
+            -16.49
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            17
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            18
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            24
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            26
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            20,
+            27
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            24
+          ],
+          [
+            24,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            27
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      74.8,
+      71.4,
+      68.0
+    ],
+    "target": [
+      0.0,
+      2.72,
+      -1.36
+    ],
+    "fov": 36.6
+  },
+  "sky": {
+    "hour": 13.0
+  },
+  "light": {
+    "exposure": 1.381,
+    "hemi": 1.665,
+    "env": 1.665
+  }
+}

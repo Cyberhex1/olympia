@@ -1,0 +1,775 @@
+{
+  "tagline": "your city never sleeps",
+  "skin": "skin.css",
+  "sky": {
+    "hour": 22.5,
+    "cloud": "#3a3557",
+    "nightCloud": "#2c2846"
+  },
+  "bloom": 0.45,
+  "finish": {
+    "ink": "#05040c",
+    "strength": 0.55,
+    "warmth": -0.05,
+    "saturation": 0.8
+  },
+  "names": {
+    "summit": [
+      "Olympia Tower",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Fab Lab",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Data Vault",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Uplink",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Memory Bank",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Drone Port",
+      "Messages and helpers take off from here"
+    ],
+    "agora": [
+      "The Interchange",
+      "Where tasks are posted and the city crosses paths"
+    ],
+    "hotel": [
+      "The Capsule Hotel",
+      "Visitors stay here: work outside C:\\code. They check out after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "m": "city-kit-commercial/building-skyscraper-e",
+      "dark": "#4a4463",
+      "neon": "#1ad9ff",
+      "scale": 7.14
+    },
+    "forge": {
+      "m": "city-kit-commercial/building-h",
+      "dark": "#4a4463",
+      "neon": "#ff9919",
+      "scale": 4.08
+    },
+    "library": {
+      "m": "city-kit-commercial/building-k",
+      "dark": "#4a4463",
+      "neon": "#9940ff",
+      "scale": 4.08
+    },
+    "beacon": {
+      "m": "city-kit-commercial/building-skyscraper-d",
+      "dark": "#4a4463",
+      "neon": "#1ad9ff",
+      "scale": 4.42
+    },
+    "archive": {
+      "m": "city-kit-commercial/building-n",
+      "dark": "#4a4463",
+      "neon": "#ff1f8c",
+      "scale": 4.08
+    },
+    "aviary": {
+      "m": "city-kit-commercial/building-m",
+      "dark": "#4a4463",
+      "neon": "#8cff33",
+      "scale": 4.08
+    },
+    "agora": {
+      "m": "city-kit-roads/road-roundabout",
+      "scale": 5.1
+    },
+    "hotel": {
+      "m": "city-kit-commercial/building-skyscraper-c",
+      "dark": "#4a4463",
+      "neon": "#ff9919",
+      "scale": 4.25
+    },
+    "projects": [
+      {
+        "m": "city-kit-commercial/building-skyscraper-c",
+        "dark": "#4a4463",
+        "neon": "#ff1f8c",
+        "scale": 5.44
+      },
+      {
+        "m": "city-kit-commercial/building-skyscraper-a",
+        "dark": "#4a4463",
+        "neon": "#1ad9ff",
+        "scale": 5.44
+      },
+      {
+        "m": "city-kit-commercial/building-skyscraper-b",
+        "dark": "#4a4463",
+        "neon": "#9940ff",
+        "scale": 5.44
+      },
+      {
+        "m": "city-kit-commercial/building-skyscraper-d",
+        "dark": "#4a4463",
+        "neon": "#8cff33",
+        "scale": 5.44
+      },
+      {
+        "m": "city-kit-commercial/building-skyscraper-a",
+        "dark": "#4a4463",
+        "neon": "#ff9919",
+        "scale": 5.44
+      },
+      {
+        "m": "city-kit-commercial/building-skyscraper-b",
+        "dark": "#4a4463",
+        "neon": "#1ad9ff",
+        "scale": 5.44
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#14151f",
+        "#3b3e57"
+      ],
+      "Mountain": [
+        "#1d1c2c",
+        "#4b4866"
+      ],
+      "IslandSides": "#7a77a0"
+    },
+    "path": "#ff3fa4",
+    "cap": "#2b2c40",
+    "stone": "#00d9ff",
+    "water": "#00e5ff",
+    "islet": [
+      "#2b2c40",
+      "#3d3a55",
+      "#25223a",
+      "#ff3fa4"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "car-kit/taxi",
+        "car-kit/police",
+        "car-kit/race-future",
+        "car-kit/van",
+        "car-kit/sedan"
+      ],
+      "count": 34,
+      "size": [
+        0.9,
+        1.2
+      ],
+      "pad": 0.8
+    },
+    {
+      "models": [
+        "city-kit-roads/light-curved",
+        "city-kit-roads/traffic-light",
+        "city-kit-roads/electricity-pole"
+      ],
+      "count": 36,
+      "size": [
+        2.2,
+        3.0
+      ],
+      "pad": 0.6
+    },
+    {
+      "models": [
+        "city-kit-commercial/low-detail-building-a",
+        "city-kit-commercial/low-detail-building-d",
+        "city-kit-commercial/low-detail-building-f",
+        "city-kit-commercial/low-detail-building-i"
+      ],
+      "count": 22,
+      "size": [
+        3.5,
+        6.5
+      ],
+      "pad": 1.6
+    },
+    {
+      "models": [
+        "city-kit-roads/dumpster",
+        "city-kit-roads/construction-cone"
+      ],
+      "count": 30,
+      "size": [
+        0.4,
+        0.8
+      ],
+      "pad": 0.4
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "city-kit-commercial/low-detail-building-b",
+        "city-kit-commercial/low-detail-building-c",
+        "city-kit-commercial/low-detail-building-e",
+        "city-kit-commercial/low-detail-building-g",
+        "city-kit-commercial/low-detail-building-k"
+      ],
+      "count": 40,
+      "size": [
+        2.2,
+        4.2
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-male-a",
+    "mini-characters/character-female-b",
+    "mini-characters/character-male-c",
+    "mini-characters/character-female-d",
+    "mini-characters/character-male-f",
+    "mini-characters/character-female-f"
+  ],
+  "terrain": {
+    "fill": {
+      "sky": "#a37cff",
+      "ground": "#2a1840",
+      "power": 1.6
+    },
+    "lampColor": "#ff5fc0",
+    "lampPower": 90,
+    "model": "cyberpunk.glb",
+    "y": 0.2,
+    "radius": 34,
+    "layout": {
+      "summit": [
+        6.46,
+        0.2,
+        -8.16
+      ],
+      "tools": {
+        "forge": {
+          "theta": 114.78,
+          "r": 29.208,
+          "face": 270.0
+        },
+        "library": {
+          "theta": 83.25,
+          "r": 26.021,
+          "face": 270.0
+        },
+        "beacon": {
+          "theta": 274.29,
+          "r": 27.276,
+          "face": 270.0
+        },
+        "archive": {
+          "theta": 203.29,
+          "r": 29.242,
+          "face": 270.0
+        },
+        "aviary": {
+          "theta": 184.34,
+          "r": 26.937,
+          "face": 270.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 207.6,
+          "r": 16.881,
+          "face": 270.0
+        },
+        {
+          "theta": 341.57,
+          "r": 27.955,
+          "face": 270.0
+        },
+        {
+          "theta": 154.65,
+          "r": 28.592,
+          "face": 270.0
+        },
+        {
+          "theta": 48.18,
+          "r": 17.337,
+          "face": 270.0
+        },
+        {
+          "theta": 135.0,
+          "r": 18.272,
+          "face": 270.0
+        },
+        {
+          "theta": 24.78,
+          "r": 29.208,
+          "face": 270.0
+        },
+        {
+          "theta": 226.47,
+          "r": 37.517,
+          "face": 270.0
+        },
+        {
+          "theta": 245.77,
+          "r": 29.827,
+          "face": 270.0
+        },
+        {
+          "theta": 286.7,
+          "r": 28.398,
+          "face": 270.0
+        },
+        {
+          "theta": 314.27,
+          "r": 37.989,
+          "face": 270.0
+        },
+        {
+          "theta": 135.0,
+          "r": 37.505,
+          "face": 270.0
+        },
+        {
+          "theta": 67.69,
+          "r": 28.665,
+          "face": 270.0
+        },
+        {
+          "theta": 45.0,
+          "r": 37.505,
+          "face": 270.0
+        }
+      ],
+      "agora": {
+        "theta": 135.0,
+        "r": 5.289
+      },
+      "hotel": {
+        "theta": 275.71,
+        "r": 13.668,
+        "face": 270.0
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -30.6,
+            30.6
+          ],
+          [
+            -30.6,
+            19.72
+          ],
+          [
+            -30.6,
+            3.74
+          ],
+          [
+            -30.6,
+            -1.36
+          ],
+          [
+            -30.6,
+            -18.7
+          ],
+          [
+            -30.6,
+            -30.6
+          ],
+          [
+            -20.4,
+            30.6
+          ],
+          [
+            -20.4,
+            19.72
+          ],
+          [
+            -20.4,
+            3.74
+          ],
+          [
+            -20.4,
+            -1.36
+          ],
+          [
+            -20.4,
+            -18.7
+          ],
+          [
+            -20.4,
+            -30.6
+          ],
+          [
+            -3.74,
+            30.6
+          ],
+          [
+            -3.74,
+            19.72
+          ],
+          [
+            -3.74,
+            3.74
+          ],
+          [
+            -3.74,
+            -1.36
+          ],
+          [
+            -3.74,
+            -18.7
+          ],
+          [
+            -3.74,
+            -30.6
+          ],
+          [
+            7.48,
+            30.6
+          ],
+          [
+            7.48,
+            19.72
+          ],
+          [
+            7.48,
+            3.74
+          ],
+          [
+            7.48,
+            -1.36
+          ],
+          [
+            7.48,
+            -18.7
+          ],
+          [
+            7.48,
+            -30.6
+          ],
+          [
+            18.7,
+            30.6
+          ],
+          [
+            18.7,
+            19.72
+          ],
+          [
+            18.7,
+            3.74
+          ],
+          [
+            18.7,
+            -1.36
+          ],
+          [
+            18.7,
+            -18.7
+          ],
+          [
+            18.7,
+            -30.6
+          ],
+          [
+            30.6,
+            30.6
+          ],
+          [
+            30.6,
+            19.72
+          ],
+          [
+            30.6,
+            3.74
+          ],
+          [
+            30.6,
+            -1.36
+          ],
+          [
+            30.6,
+            -18.7
+          ],
+          [
+            30.6,
+            -30.6
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            20,
+            26
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            21,
+            27
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            28
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            29
+          ],
+          [
+            24,
+            30
+          ],
+          [
+            24,
+            25
+          ],
+          [
+            25,
+            31
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            32
+          ],
+          [
+            26,
+            27
+          ],
+          [
+            27,
+            33
+          ],
+          [
+            27,
+            28
+          ],
+          [
+            28,
+            34
+          ],
+          [
+            28,
+            29
+          ],
+          [
+            29,
+            35
+          ],
+          [
+            30,
+            31
+          ],
+          [
+            31,
+            32
+          ],
+          [
+            32,
+            33
+          ],
+          [
+            33,
+            34
+          ],
+          [
+            34,
+            35
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      44.2,
+      64.6,
+      85.0
+    ],
+    "target": [
+      1.36,
+      4.08,
+      -0.68
+    ],
+    "fov": 38.7
+  },
+  "light": {
+    "exposure": 0.775,
+    "hemi": 1.077,
+    "env": 1.077
+  }
+}

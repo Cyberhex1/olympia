@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pair a phone</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<style>
+  body { margin: 0; padding: 22px; background: #10182e; color: #eef1f8; font: 14px/1.45 system-ui, sans-serif; text-align: center; }
+  h1 { font-size: 17px; margin: 0 0 4px; color: #f0cf7e; }
+  p { margin: 6px 0; color: #c3cadc; }
+  .step { margin: 16px 0 4px; color: #9aa4bd; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  .big { font: 600 22px ui-monospace, monospace; color: #fff; user-select: all; }
+  .code { font: 700 40px ui-monospace, monospace; letter-spacing: .12em; color: #f0cf7e; user-select: all; }
+  .warn { color: #f0cf7e; margin-top: 16px; font-size: 13px; }
+</style></head>
+<body>
+  <h1>Pair a phone</h1>
+  <p>Connect your phone to the same Wi-Fi as this PC.</p>
+  <div class="step" id="open">1. On the phone, open</div>
+  <div class="big" id="address"></div>
+  <div id="withCode">
+    <div class="step">2. Type this code</div>
+    <div class="code" id="code"></div>
+    <p>Your phone remembers it, so you only do this once.</p>
+  </div>
+  <p id="noCode" hidden>No code is needed: any device on this Wi-Fi can open it. You can turn the code back on in the tray menu.</p>
+  <p class="warn" id="note"></p>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('address').textContent = q.get('address');
+  document.getElementById('code').textContent = q.get('code');
+  document.getElementById('note').textContent = q.get('note') || '';
+  if (!q.get('code')) {
+    document.querySelector('h1').textContent = 'Open on a phone';
+    document.getElementById('open').textContent = 'On the phone, open';
+    document.getElementById('withCode').hidden = true;
+    document.getElementById('noCode').hidden = false;
+  }
+</script>
+</body></html>

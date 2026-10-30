@@ -1,0 +1,896 @@
+{
+  "tagline": "your kitchen, orders up",
+  "skin": "skin.css",
+  "sky": {
+    "hour": 13.8
+  },
+  "finish": {
+    "warmth": 0.1,
+    "saturation": 1.12
+  },
+  "names": {
+    "summit": [
+      "The Pass",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Grill",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Recipe Shelf",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Front Window",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Walk-in Fridge",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Service Hatch",
+      "Messages and helpers go out from here"
+    ],
+    "agora": [
+      "The Ticket Rail",
+      "Where orders are pinned and the kitchen gathers"
+    ],
+    "hotel": [
+      "Takeout",
+      "Visitors queue here: work outside C:\\code. They leave after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "furniture-kit/rugDoormat",
+          0,
+          0
+        ]
+      ],
+      "scale": 5.1
+    },
+    "forge": {
+      "parts": [
+        [
+          "furniture-kit/kitchenStove",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenStove",
+          0.43,
+          0
+        ],
+        [
+          "furniture-kit/hoodLarge",
+          0.2,
+          0,
+          0,
+          1,
+          0.9
+        ]
+      ],
+      "scale": 7.48
+    },
+    "library": {
+      "parts": [
+        [
+          "furniture-kit/kitchenCabinet",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenCabinetUpperDouble",
+          0,
+          0,
+          0,
+          1,
+          0.9
+        ],
+        [
+          "furniture-kit/kitchenCabinet",
+          0.43,
+          0
+        ]
+      ],
+      "scale": 7.48
+    },
+    "beacon": {
+      "parts": [
+        [
+          "furniture-kit/kitchenBar",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenBar",
+          0.43,
+          0
+        ],
+        [
+          "furniture-kit/stoolBar",
+          0.2,
+          0.3
+        ],
+        [
+          "furniture-kit/stoolBar",
+          0.6,
+          0.3
+        ]
+      ],
+      "scale": 7.48
+    },
+    "archive": {
+      "parts": [
+        [
+          "furniture-kit/kitchenFridgeLarge",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenFridge",
+          0.55,
+          0
+        ]
+      ],
+      "scale": 7.48
+    },
+    "aviary": {
+      "parts": [
+        [
+          "furniture-kit/desk",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/laptop",
+          0.45,
+          -0.35,
+          180,
+          1,
+          0.38
+        ],
+        [
+          "furniture-kit/chairDesk",
+          0.4,
+          0.4,
+          180
+        ]
+      ],
+      "scale": 7.48
+    },
+    "agora": {
+      "parts": [
+        [
+          "furniture-kit/kitchenBar",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenBar",
+          0.43,
+          0
+        ],
+        [
+          "furniture-kit/kitchenBar",
+          0.86,
+          0
+        ]
+      ],
+      "scale": 7.48
+    },
+    "hotel": {
+      "parts": [
+        [
+          "mini-market/cash-register",
+          0,
+          0
+        ]
+      ],
+      "scale": 5.1
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "furniture-kit/tableRound",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            0.8
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            -1.1,
+            180
+          ],
+          [
+            "furniture-kit/chair",
+            -1.1,
+            -0.15,
+            -90
+          ],
+          [
+            "furniture-kit/chair",
+            0.8,
+            -0.15,
+            90
+          ],
+          [
+            "food-kit/plate-dinner",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.37
+          ],
+          [
+            "food-kit/burger",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.39
+          ],
+          [
+            "@parasol:#e07fb8",
+            0.0,
+            -0.2
+          ]
+        ],
+        "scale": 5.1
+      },
+      {
+        "parts": [
+          [
+            "furniture-kit/tableRound",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            0.8
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            -1.1,
+            180
+          ],
+          [
+            "furniture-kit/chair",
+            -1.1,
+            -0.15,
+            -90
+          ],
+          [
+            "furniture-kit/chair",
+            0.8,
+            -0.15,
+            90
+          ],
+          [
+            "food-kit/plate-dinner",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.37
+          ],
+          [
+            "food-kit/cupcake",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.39
+          ],
+          [
+            "@parasol:#e8735f",
+            0.0,
+            -0.2
+          ]
+        ],
+        "scale": 5.1
+      },
+      {
+        "parts": [
+          [
+            "furniture-kit/tableRound",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            0.8
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            -1.1,
+            180
+          ],
+          [
+            "furniture-kit/chair",
+            -1.1,
+            -0.15,
+            -90
+          ],
+          [
+            "furniture-kit/chair",
+            0.8,
+            -0.15,
+            90
+          ],
+          [
+            "food-kit/plate-dinner",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.37
+          ],
+          [
+            "food-kit/salad",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.39
+          ],
+          [
+            "@parasol:#5b8fe0",
+            0.0,
+            -0.2
+          ]
+        ],
+        "scale": 5.1
+      },
+      {
+        "parts": [
+          [
+            "furniture-kit/tableRound",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            0.8
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            -1.1,
+            180
+          ],
+          [
+            "furniture-kit/chair",
+            -1.1,
+            -0.15,
+            -90
+          ],
+          [
+            "furniture-kit/chair",
+            0.8,
+            -0.15,
+            90
+          ],
+          [
+            "food-kit/plate-dinner",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.37
+          ],
+          [
+            "food-kit/pizza",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.39
+          ],
+          [
+            "@parasol:#7fcf6a",
+            0.0,
+            -0.2
+          ]
+        ],
+        "scale": 5.1
+      },
+      {
+        "parts": [
+          [
+            "furniture-kit/tableRound",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            0.8
+          ],
+          [
+            "furniture-kit/chair",
+            -0.15,
+            -1.1,
+            180
+          ],
+          [
+            "furniture-kit/chair",
+            -1.1,
+            -0.15,
+            -90
+          ],
+          [
+            "furniture-kit/chair",
+            0.8,
+            -0.15,
+            90
+          ],
+          [
+            "food-kit/plate-dinner",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.37
+          ],
+          [
+            "food-kit/pancakes",
+            0.2,
+            -0.3,
+            0,
+            0.6,
+            0.39
+          ],
+          [
+            "@parasol:#f0b62a",
+            0.0,
+            -0.2
+          ]
+        ],
+        "scale": 5.1
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#8f8378",
+        "#ece5da"
+      ],
+      "Mountain": [
+        "#c98d5c",
+        "#f1d2a8"
+      ]
+    },
+    "path": "#ffffff",
+    "cap": "#e8ddd0",
+    "stone": "#3a332e",
+    "water": "#d9873a",
+    "islet": [
+      "#ece5da",
+      "#c9b8a6",
+      "#a8927e",
+      "#d0587a"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "furniture-kit/tableRound",
+        "furniture-kit/tableCloth"
+      ],
+      "count": 16,
+      "size": [
+        0.9,
+        1.2
+      ],
+      "pad": 1.2
+    },
+    {
+      "models": [
+        "food-kit/barrel",
+        "food-kit/pumpkin",
+        "food-kit/watermelon",
+        "food-kit/carton",
+        "food-kit/bag"
+      ],
+      "count": 40,
+      "size": [
+        0.6,
+        1.0
+      ],
+      "pad": 0.4
+    },
+    {
+      "models": [
+        "furniture-kit/chair",
+        "furniture-kit/stoolBar",
+        "furniture-kit/pottedPlant"
+      ],
+      "count": 36,
+      "size": [
+        0.8,
+        1.3
+      ],
+      "pad": 0.4
+    },
+    {
+      "models": [
+        "food-kit/cake-birthday",
+        "food-kit/cupcake",
+        "food-kit/donut-chocolate",
+        "food-kit/croissant"
+      ],
+      "count": 18,
+      "size": [
+        0.6,
+        1.0
+      ],
+      "pad": 0.5
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "food-kit/cupcake",
+        "food-kit/donut-sprinkles",
+        "food-kit/cookie-chocolate",
+        "food-kit/muffin"
+      ],
+      "count": 30,
+      "size": [
+        0.8,
+        1.5
+      ]
+    }
+  ],
+  "residents": [
+    "mini-market/character-employee",
+    "mini-characters/character-female-c",
+    "mini-characters/character-male-b",
+    "mini-characters/character-female-e",
+    "mini-characters/character-male-d"
+  ],
+  "terrain": {
+    "model": "kitchen.glb",
+    "y": 0.41,
+    "radius": 34,
+    "layout": {
+      "summit": [
+        -4.08,
+        3.6,
+        -5.44
+      ],
+      "tools": {
+        "forge": {
+          "theta": 228.85,
+          "r": 23.253,
+          "face": 270.0
+        },
+        "library": {
+          "theta": 259.55,
+          "r": 17.805,
+          "face": 270.0
+        },
+        "archive": {
+          "theta": 302.65,
+          "r": 20.796,
+          "face": 270.0
+        },
+        "beacon": {
+          "theta": 165.7,
+          "r": 17.894,
+          "face": 270.0
+        },
+        "aviary": {
+          "theta": 327.99,
+          "r": 19.245,
+          "face": 0.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 133.03,
+          "r": 27.905,
+          "face": 90
+        },
+        {
+          "theta": 107.35,
+          "r": 22.798,
+          "face": 90
+        },
+        {
+          "theta": 75.07,
+          "r": 21.113,
+          "face": 90
+        },
+        {
+          "theta": 50.91,
+          "r": 28.037,
+          "face": 90
+        },
+        {
+          "theta": 131.28,
+          "r": 37.102,
+          "face": 90
+        },
+        {
+          "theta": 113.2,
+          "r": 31.072,
+          "face": 90
+        },
+        {
+          "theta": 90.0,
+          "r": 28.56,
+          "face": 90
+        },
+        {
+          "theta": 66.8,
+          "r": 31.072,
+          "face": 90
+        },
+        {
+          "theta": 48.72,
+          "r": 37.102,
+          "face": 90
+        },
+        {
+          "theta": 357.51,
+          "r": 15.655,
+          "face": 90
+        },
+        {
+          "theta": 18.78,
+          "r": 17.956,
+          "face": 90
+        },
+        {
+          "theta": 142.91,
+          "r": 34.952,
+          "face": 90
+        },
+        {
+          "theta": 36.19,
+          "r": 34.546,
+          "face": 90
+        }
+      ],
+      "agora": {
+        "theta": 174.29,
+        "r": 10.251,
+        "face": 270.0
+      },
+      "hotel": {
+        "theta": 13.52,
+        "r": 27.626,
+        "face": 0.0
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -19.72,
+            -12.58
+          ],
+          [
+            -4.08,
+            -12.58
+          ],
+          [
+            13.6,
+            -12.58
+          ],
+          [
+            -19.72,
+            -1.02
+          ],
+          [
+            -4.08,
+            -1.02
+          ],
+          [
+            10.2,
+            -1.02
+          ],
+          [
+            20.4,
+            -1.02
+          ],
+          [
+            20.4,
+            -12.58
+          ],
+          [
+            -30.26,
+            16.66
+          ],
+          [
+            -12.92,
+            16.66
+          ],
+          [
+            0.0,
+            16.66
+          ],
+          [
+            11.56,
+            16.66
+          ],
+          [
+            23.8,
+            16.66
+          ],
+          [
+            -30.26,
+            24.82
+          ],
+          [
+            -12.92,
+            24.82
+          ],
+          [
+            0.0,
+            24.82
+          ],
+          [
+            11.56,
+            24.82
+          ],
+          [
+            23.8,
+            24.82
+          ],
+          [
+            30.26,
+            16.66
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            18
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      68.0,
+      66.3,
+      64.6
+    ],
+    "target": [
+      0.68,
+      0.0,
+      2.04
+    ],
+    "fov": 30.0,
+    "portrait": 1.18
+  },
+  "light": {
+    "exposure": 1.51,
+    "hemi": 1.795,
+    "env": 1.795
+  }
+}

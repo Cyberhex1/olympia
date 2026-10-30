@@ -1,0 +1,6 @@
+/* Theme Park: candy colours and round letters */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap');
+:root { --cream: #fffaf2; --ink: #2d2240; --muted: #7d6f8f; --red: #ff4f7b; --gold: #ffc93c; --soft: #fff0e0; --soft2: #ffe4ec; --serif: 'Baloo 2', sans-serif; --sans: 'Baloo 2', sans-serif; }
+#title .realm { font-family: 'Baloo 2', sans-serif; color: #fff; text-shadow: 3px 3px 0 #ff4f7b; }
+#face, #feed, #card { border: 3px solid #ffc93c; }
+#face .doing, #feed li { font-style: normal; }

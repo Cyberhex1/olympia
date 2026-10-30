@@ -1,0 +1,17 @@
+{
+  "owner": "you",
+  "realm": "Olympia",
+  "tagline": "your realm, alive",
+  "theme": "olympus",
+  "place": { "name": "Athens", "lat": 37.9715, "lon": 23.7257 },
+  "port": 3110,
+  "host": "127.0.0.1",
+
+  "projectsRoot": "C:/code",
+  "exclude": ["node_modules"],
+  "projects": {},
+
+  "docker": true,
+  "demoWhenOffline": true,
+  "allowSleep": false
+}

@@ -1,0 +1,4 @@
+/* Golden Hour: the island at its warmest, cream cards with terracotta and gold */
+:root { --cream: #fbf4e6; --panel: rgba(251, 244, 230, .95); --ink: #2b211a; --muted: #7b6a5a; --red: #c2562f; --gold: #e2a13b; --soft: #f3e6cc; --soft2: #efdcbc; }
+#face { border: 2px solid #e2a13b; }
+#title .realm { color: #fff3dc; text-shadow: 0 2px 16px rgba(194, 86, 47, .6); }

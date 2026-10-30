@@ -1,0 +1,904 @@
+{
+  "tagline": "your open-plan office",
+  "skin": "skin.css",
+  "finish": {
+    "warmth": 0.02,
+    "saturation": 1.0
+  },
+  "names": {
+    "summit": [
+      "Head Office",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Workshop",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Library",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Research Desk",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Filing Room",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Mailroom",
+      "Messages and helpers go out from here"
+    ],
+    "agora": [
+      "The Stand-up Corner",
+      "Where tasks are pinned up and the team gathers"
+    ],
+    "hotel": [
+      "The Lounge",
+      "Visitors wait here: work outside C:\\code. They head home after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "furniture-kit/rugRound",
+          0,
+          0
+        ]
+      ],
+      "scale": 2.7743999999999995
+    },
+    "forge": {
+      "parts": [
+        [
+          "furniture-kit/kitchenCabinet",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/kitchenCabinet",
+          0,
+          -0.45
+        ],
+        [
+          "furniture-kit/kitchenCoffeeMachine",
+          0.1,
+          -0.1,
+          0,
+          1,
+          0.43
+        ]
+      ],
+      "scale": 4.624
+    },
+    "library": {
+      "parts": [
+        [
+          "furniture-kit/bookcaseOpen",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/bookcaseOpen",
+          0.42,
+          0
+        ],
+        [
+          "furniture-kit/loungeChair",
+          0.2,
+          0.7,
+          180
+        ]
+      ],
+      "scale": 4.624
+    },
+    "beacon": {
+      "parts": [
+        [
+          "furniture-kit/deskCorner",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/computerScreen",
+          0.3,
+          -0.3,
+          0,
+          1,
+          0.38
+        ],
+        [
+          "furniture-kit/computerScreen",
+          0.6,
+          -0.55,
+          -60,
+          1,
+          0.38
+        ],
+        [
+          "furniture-kit/chairDesk",
+          0.55,
+          0.3,
+          180
+        ]
+      ],
+      "scale": 4.624
+    },
+    "archive": {
+      "parts": [
+        [
+          "furniture-kit/bookcaseClosedWide",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/bookcaseClosedDoors",
+          0.85,
+          0
+        ],
+        [
+          "furniture-kit/cardboardBoxClosed",
+          0.3,
+          0.4
+        ]
+      ],
+      "scale": 4.624
+    },
+    "aviary": {
+      "parts": [
+        [
+          "furniture-kit/sideTableDrawers",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/sideTableDrawers",
+          0.5,
+          0
+        ],
+        [
+          "furniture-kit/cardboardBoxClosed",
+          0.2,
+          0.4
+        ],
+        [
+          "furniture-kit/coatRackStanding",
+          1.1,
+          -0.1
+        ]
+      ],
+      "scale": 4.624
+    },
+    "agora": {
+      "parts": [
+        [
+          "furniture-kit/rugRound",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/tableCoffee",
+          0.35,
+          -0.2
+        ],
+        [
+          "furniture-kit/loungeChair",
+          -0.3,
+          0.4,
+          90
+        ],
+        [
+          "furniture-kit/loungeChair",
+          1.2,
+          0.4,
+          -90
+        ]
+      ],
+      "scale": 4.624
+    },
+    "hotel": {
+      "parts": [
+        [
+          "furniture-kit/loungeSofa",
+          0,
+          0
+        ],
+        [
+          "furniture-kit/tableCoffee",
+          0.4,
+          0.5
+        ],
+        [
+          "furniture-kit/lampSquareFloor",
+          -0.4,
+          -0.1
+        ]
+      ],
+      "scale": 4.624
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "furniture-kit/rugRectangle",
+            0.7,
+            -0.45,
+            0,
+            1.25,
+            0.005
+          ],
+          [
+            "furniture-kit/desk",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.17,
+            -0.26,
+            0,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.2,
+            0.38
+          ],
+          [
+            "furniture-kit/desk",
+            0.73,
+            -0.79,
+            180
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.56,
+            -0.53,
+            180,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.53,
+            -1.17,
+            180
+          ],
+          [
+            "furniture-kit/desk",
+            0.78,
+            0
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.9500000000000001,
+            -0.26,
+            0,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.98,
+            0.38
+          ],
+          [
+            "furniture-kit/desk",
+            1.51,
+            -0.79,
+            180
+          ],
+          [
+            "furniture-kit/computerScreen",
+            1.34,
+            -0.53,
+            180,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            1.31,
+            -1.17,
+            180
+          ]
+        ],
+        "scale": 4.624
+      },
+      {
+        "parts": [
+          [
+            "furniture-kit/rugRectangle",
+            0.7,
+            -0.45,
+            0,
+            1.25,
+            0.005
+          ],
+          [
+            "furniture-kit/desk",
+            0,
+            0
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.17,
+            -0.26,
+            0,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.2,
+            0.38
+          ],
+          [
+            "furniture-kit/desk",
+            0.73,
+            -0.79,
+            180
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.56,
+            -0.53,
+            180,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.53,
+            -1.17,
+            180
+          ],
+          [
+            "furniture-kit/desk",
+            0.78,
+            0
+          ],
+          [
+            "furniture-kit/computerScreen",
+            0.9500000000000001,
+            -0.26,
+            0,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            0.98,
+            0.38
+          ],
+          [
+            "furniture-kit/desk",
+            1.51,
+            -0.79,
+            180
+          ],
+          [
+            "furniture-kit/computerScreen",
+            1.34,
+            -0.53,
+            180,
+            1,
+            0.38
+          ],
+          [
+            "furniture-kit/chairDesk",
+            1.31,
+            -1.17,
+            180
+          ],
+          [
+            "furniture-kit/pottedPlant",
+            1.7,
+            -0.4
+          ]
+        ],
+        "scale": 4.624
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#9a8f80",
+        "#d9d1c4"
+      ],
+      "Mountain": [
+        "#5c8c4b",
+        "#9cc276"
+      ]
+    },
+    "path": "#ebe6dc",
+    "cap": "#cfc6b6",
+    "stone": "#c8c0b2",
+    "water": "#7cc4e8"
+  },
+  "scatter": [
+    {
+      "models": [
+        "furniture-kit/pottedPlant",
+        "furniture-kit/plantSmall2",
+        "furniture-kit/plantSmall3"
+      ],
+      "count": 50,
+      "size": [
+        0.9,
+        1.6
+      ],
+      "pad": 0.6
+    },
+    {
+      "models": [
+        "furniture-kit/kitchenCoffeeMachine",
+        "furniture-kit/trashcan",
+        "furniture-kit/lampRoundFloor",
+        "furniture-kit/speaker"
+      ],
+      "count": 26,
+      "size": [
+        0.6,
+        1.3
+      ],
+      "pad": 0.5
+    },
+    {
+      "models": [
+        "city-kit-suburban/tree-large",
+        "city-kit-suburban/tree-small",
+        "city-kit-suburban/planter"
+      ],
+      "count": 26,
+      "size": [
+        2.0,
+        3.2
+      ],
+      "pad": 1.0
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "city-kit-suburban/tree-large",
+        "city-kit-suburban/tree-small"
+      ],
+      "count": 34,
+      "size": [
+        1.6,
+        2.6
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-female-a",
+    "mini-characters/character-male-b",
+    "mini-characters/character-female-e",
+    "mini-characters/character-male-d",
+    "mini-characters/character-female-c",
+    "mini-characters/character-male-a"
+  ],
+  "terrain": {
+    "model": "office.glb",
+    "y": 0.71,
+    "radius": 46,
+    "layout": {
+      "summit": [
+        22.66,
+        0.71,
+        11.37
+      ],
+      "tools": {
+        "forge": {
+          "theta": 177.7,
+          "r": 29.849,
+          "face": 180.0
+        },
+        "library": {
+          "theta": 324.39,
+          "r": 35.265,
+          "face": 270.0
+        },
+        "beacon": {
+          "theta": 333.86,
+          "r": 32.966,
+          "face": 0.0
+        },
+        "archive": {
+          "theta": 305.17,
+          "r": 25.688,
+          "face": 270.0
+        },
+        "aviary": {
+          "theta": 262.55,
+          "r": 21.41,
+          "face": 270.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 215.9,
+          "r": 28.084,
+          "face": 90
+        },
+        {
+          "theta": 245.54,
+          "r": 18.091,
+          "face": 90
+        },
+        {
+          "theta": 295.26,
+          "r": 18.207,
+          "face": 90
+        },
+        {
+          "theta": 192.17,
+          "r": 23.273,
+          "face": 90
+        },
+        {
+          "theta": 213.23,
+          "r": 8.955,
+          "face": 90
+        },
+        {
+          "theta": 327.72,
+          "r": 9.188,
+          "face": 90
+        },
+        {
+          "theta": 163.7,
+          "r": 23.703,
+          "face": 90
+        },
+        {
+          "theta": 138.39,
+          "r": 10.019,
+          "face": 90
+        },
+        {
+          "theta": 40.58,
+          "r": 10.228,
+          "face": 90
+        },
+        {
+          "theta": 142.77,
+          "r": 28.574,
+          "face": 90
+        },
+        {
+          "theta": 113.43,
+          "r": 18.841,
+          "face": 90
+        },
+        {
+          "theta": 65.8,
+          "r": 18.953,
+          "face": 90
+        },
+        {
+          "theta": 324.43,
+          "r": 28.309,
+          "face": 90
+        }
+      ],
+      "agora": {
+        "theta": 121.29,
+        "r": 31.161,
+        "face": 90.0
+      },
+      "hotel": {
+        "theta": 349.13,
+        "r": 23.072,
+        "face": 0.0
+      },
+      "ringRoad": 18,
+      "paths": {
+        "nodes": [
+          [
+            -28.9,
+            20.39
+          ],
+          [
+            -28.9,
+            10.44
+          ],
+          [
+            -28.9,
+            -1.12
+          ],
+          [
+            -28.9,
+            -12.68
+          ],
+          [
+            -28.9,
+            -21.92
+          ],
+          [
+            -12.72,
+            20.39
+          ],
+          [
+            -12.72,
+            10.44
+          ],
+          [
+            -12.72,
+            -1.12
+          ],
+          [
+            -12.72,
+            -12.68
+          ],
+          [
+            -12.72,
+            -21.92
+          ],
+          [
+            2.54,
+            20.39
+          ],
+          [
+            2.54,
+            10.44
+          ],
+          [
+            2.54,
+            -1.12
+          ],
+          [
+            2.54,
+            -12.68
+          ],
+          [
+            2.54,
+            -21.92
+          ],
+          [
+            17.34,
+            20.39
+          ],
+          [
+            17.34,
+            10.44
+          ],
+          [
+            17.34,
+            -1.12
+          ],
+          [
+            17.34,
+            -12.68
+          ],
+          [
+            17.34,
+            -21.92
+          ],
+          [
+            28.67,
+            20.39
+          ],
+          [
+            28.67,
+            10.44
+          ],
+          [
+            28.67,
+            -1.12
+          ],
+          [
+            28.67,
+            -12.68
+          ],
+          [
+            28.67,
+            -21.92
+          ],
+          [
+            -4.62,
+            25.7
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            24
+          ],
+          [
+            10,
+            25
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      55.22,
+      59.02,
+      57.12
+    ],
+    "target": [
+      0.68,
+      -1.36,
+      -0.0
+    ],
+    "fov": 37.6,
+    "portrait": 1.18
+  },
+  "sky": {
+    "hour": 13.2
+  },
+  "light": {
+    "exposure": 1.184,
+    "hemi": 1.352,
+    "env": 1.352
+  }
+}

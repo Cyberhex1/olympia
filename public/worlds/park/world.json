@@ -1,0 +1,587 @@
+{
+  "tagline": "your theme park, all rides open",
+  "skin": "skin.css",
+  "finish": {
+    "warmth": 0.05,
+    "saturation": 1.2
+  },
+  "names": {
+    "summit": [
+      "The Big Top",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Workshop",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "Guest Services",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Lookout Tower",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Photo Booth",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Balloon Stand",
+      "Messages and helpers float off from here"
+    ],
+    "agora": [
+      "The Main Gate",
+      "Where tasks are posted and the park gathers"
+    ],
+    "hotel": [
+      "The Park Hotel",
+      "Visitors stay here: work outside C:\\code. They check out after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "coaster-kit/stall-information",
+          0,
+          0
+        ]
+      ],
+      "scale": 3.49
+    },
+    "forge": {
+      "parts": [
+        [
+          "coaster-kit/trash",
+          0,
+          0
+        ],
+        [
+          "coaster-kit/bench",
+          0.8,
+          0
+        ]
+      ],
+      "scale": 2.83
+    },
+    "library": {
+      "parts": [
+        [
+          "coaster-kit/bench",
+          0,
+          0
+        ],
+        [
+          "coaster-kit/flowers",
+          0.9,
+          0
+        ]
+      ],
+      "scale": 2.83
+    },
+    "beacon": {
+      "parts": [
+        [
+          "coaster-kit/ride-exit",
+          0,
+          0
+        ]
+      ],
+      "scale": 2.83
+    },
+    "archive": {
+      "parts": [
+        [
+          "coaster-kit/bench",
+          0,
+          0
+        ],
+        [
+          "coaster-kit/trash",
+          0.8,
+          0
+        ]
+      ],
+      "scale": 2.83
+    },
+    "aviary": {
+      "parts": [
+        [
+          "coaster-kit/ride-entrance",
+          0,
+          0
+        ]
+      ],
+      "scale": 2.83
+    },
+    "agora": {
+      "m": "coaster-kit/park-entrance",
+      "scale": 3.49
+    },
+    "hotel": {
+      "m": "city-kit-suburban/building-type-s",
+      "scale": 5.23
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "coaster-kit/station",
+            0,
+            0,
+            90
+          ]
+        ],
+        "scale": 2.83
+      },
+      {
+        "parts": [
+          [
+            "coaster-kit/stall-food",
+            0,
+            0
+          ]
+        ],
+        "scale": 3.05
+      },
+      {
+        "parts": [
+          [
+            "coaster-kit/stall-drinks",
+            0,
+            0
+          ]
+        ],
+        "scale": 3.05
+      },
+      {
+        "parts": [
+          [
+            "coaster-kit/ride-entrance",
+            0,
+            0
+          ],
+          [
+            "coaster-kit/queue-straight",
+            0,
+            1.0,
+            0,
+            1,
+            -0.15
+          ]
+        ],
+        "scale": 3.05
+      },
+      {
+        "parts": [
+          [
+            "coaster-kit/stall-toilets",
+            0,
+            0
+          ]
+        ],
+        "scale": 3.05
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#5ea84a",
+        "#9fd56a"
+      ],
+      "Mountain": [
+        "#58a04c",
+        "#a8d77a"
+      ]
+    },
+    "path": "#e8c5a0",
+    "cap": "#f2d7b6",
+    "stone": "#ff7a8a",
+    "water": "#47c1e8"
+  },
+  "scatter": [
+    {
+      "models": [
+        "coaster-kit/tree",
+        "coaster-kit/tree-large"
+      ],
+      "count": 40,
+      "size": [
+        1.8,
+        3.0
+      ],
+      "pad": 1.0
+    },
+    {
+      "models": [
+        "coaster-kit/bench",
+        "coaster-kit/trash",
+        "coaster-kit/flowers"
+      ],
+      "count": 50,
+      "size": [
+        0.4,
+        0.8
+      ],
+      "pad": 0.4
+    },
+    {
+      "models": [
+        "food-kit/ice-cream",
+        "food-kit/donut-sprinkles",
+        "food-kit/cupcake",
+        "food-kit/soda"
+      ],
+      "count": 14,
+      "size": [
+        0.9,
+        1.4
+      ],
+      "pad": 0.6
+    },
+    {
+      "models": [
+        "coaster-kit/queue-straight",
+        "coaster-kit/path-straight"
+      ],
+      "count": 18,
+      "size": [
+        0.2,
+        0.3
+      ],
+      "pad": 0.6,
+      "cast": false
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "coaster-kit/tree",
+        "coaster-kit/tree-large"
+      ],
+      "count": 30,
+      "size": [
+        1.4,
+        2.4
+      ]
+    },
+    {
+      "models": [
+        "coaster-kit/support-small",
+        "coaster-kit/support-large"
+      ],
+      "count": 14,
+      "size": [
+        1.2,
+        2.2
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-female-a",
+    "mini-characters/character-male-c",
+    "mini-characters/character-female-d",
+    "mini-characters/character-male-b",
+    "mini-characters/character-female-e",
+    "mini-characters/character-male-f"
+  ],
+  "terrain": {
+    "model": "park.glb",
+    "y": 0.12,
+    "radius": 34,
+    "layout": {
+      "summit": [
+        5.67,
+        0.2,
+        -1.74
+      ],
+      "tools": {
+        "forge": {
+          "theta": 176.82,
+          "r": 11.787,
+          "face": 180.0
+        },
+        "library": {
+          "theta": 34.42,
+          "r": 14.267,
+          "face": 0.0
+        },
+        "beacon": {
+          "theta": 295.2,
+          "r": 8.19,
+          "face": 0.0
+        },
+        "archive": {
+          "theta": 122.01,
+          "r": 24.673,
+          "face": 180.0
+        },
+        "aviary": {
+          "theta": 57.99,
+          "r": 24.673,
+          "face": 0.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 143.97,
+          "r": 17.787,
+          "face": 180.0
+        },
+        {
+          "theta": 4.09,
+          "r": 12.236,
+          "face": 0.0
+        },
+        {
+          "theta": 58.39,
+          "r": 13.307,
+          "face": 0.0
+        },
+        {
+          "theta": 47.29,
+          "r": 15.424,
+          "face": 0.0
+        },
+        {
+          "theta": 205.2,
+          "r": 8.19,
+          "face": 180.0
+        },
+        {
+          "theta": 108.43,
+          "r": 19.298,
+          "face": 180.0
+        },
+        {
+          "theta": 71.57,
+          "r": 19.298,
+          "face": 0.0
+        },
+        {
+          "theta": 240.46,
+          "r": 15.031,
+          "face": 180.0
+        },
+        {
+          "theta": 299.54,
+          "r": 15.031,
+          "face": 0.0
+        },
+        {
+          "theta": 144.72,
+          "r": 28.301,
+          "face": 180.0
+        },
+        {
+          "theta": 39.81,
+          "r": 27.236,
+          "face": 0.0
+        },
+        {
+          "theta": 253.54,
+          "r": 19.999,
+          "face": 180.0
+        },
+        {
+          "theta": 286.46,
+          "r": 19.999,
+          "face": 0.0
+        }
+      ],
+      "agora": {
+        "theta": 90.0,
+        "r": 25.064,
+        "face": 90.0
+      },
+      "hotel": {
+        "theta": 220.4,
+        "r": 26.902,
+        "face": 212.55
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            0.0,
+            4.36
+          ],
+          [
+            6.54,
+            4.36
+          ],
+          [
+            4.62,
+            -0.26
+          ],
+          [
+            0.0,
+            -2.18
+          ],
+          [
+            -4.62,
+            -0.26
+          ],
+          [
+            -6.54,
+            4.36
+          ],
+          [
+            -4.62,
+            8.98
+          ],
+          [
+            -0.0,
+            10.9
+          ],
+          [
+            4.62,
+            8.98
+          ],
+          [
+            0.0,
+            17.44
+          ],
+          [
+            0.0,
+            24.85
+          ],
+          [
+            0.0,
+            -9.81
+          ],
+          [
+            0.0,
+            -20.05
+          ],
+          [
+            -13.08,
+            4.36
+          ],
+          [
+            -20.49,
+            4.36
+          ],
+          [
+            13.08,
+            4.36
+          ],
+          [
+            20.49,
+            4.36
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            5,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            15,
+            16
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      26.15,
+      47.95,
+      63.21
+    ],
+    "target": [
+      1.31,
+      -1.31,
+      -0.87
+    ],
+    "fov": 37.6
+  },
+  "sky": {
+    "hour": 14.2
+  },
+  "light": {
+    "exposure": 1.292,
+    "hemi": 1.511,
+    "env": 1.511
+  }
+}

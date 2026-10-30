@@ -1,0 +1,683 @@
+{
+  "tagline": "your harbour, fair winds",
+  "skin": "skin.css",
+  "finish": {
+    "warmth": 0.08,
+    "saturation": 1.15
+  },
+  "names": {
+    "summit": [
+      "The Lighthouse Fort",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "The Shipwright",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Chart House",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Crow's Nest",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "The Treasure Vault",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Message Boats",
+      "Messages and helpers set sail from here"
+    ],
+    "agora": [
+      "The Quay",
+      "Where orders are nailed up and the crews gather"
+    ],
+    "hotel": [
+      "The Visitors' Moorings",
+      "Visiting ships tie up here: work outside C:\\code. They sail after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "m": "pirate-kit/tower-complete-large",
+      "scale": 1.49
+    },
+    "forge": {
+      "parts": [
+        [
+          "pirate-kit/structure",
+          0,
+          0
+        ],
+        [
+          "pirate-kit/barrel",
+          1.0,
+          0.3
+        ]
+      ],
+      "scale": 1.66
+    },
+    "library": {
+      "parts": [
+        [
+          "pirate-kit/castle-window",
+          0,
+          0
+        ]
+      ],
+      "scale": 1.66
+    },
+    "beacon": {
+      "parts": [
+        [
+          "pirate-kit/tower-watch",
+          0,
+          0
+        ]
+      ],
+      "scale": 1.66
+    },
+    "archive": {
+      "parts": [
+        [
+          "pirate-kit/chest",
+          0,
+          0
+        ]
+      ],
+      "scale": 1.99
+    },
+    "aviary": {
+      "parts": [
+        [
+          "pirate-kit/boat-row-large",
+          0,
+          0,
+          90
+        ],
+        [
+          "pirate-kit/boat-row-small",
+          1.2,
+          0.4,
+          70
+        ]
+      ],
+      "scale": 1.66
+    },
+    "agora": {
+      "parts": [
+        [
+          "pirate-kit/structure-platform",
+          0,
+          0
+        ],
+        [
+          "pirate-kit/barrel",
+          1.2,
+          0.8
+        ],
+        [
+          "pirate-kit/crate",
+          -1.2,
+          0.8
+        ]
+      ],
+      "scale": 1.66
+    },
+    "hotel": {
+      "m": "pirate-kit/ship-ghost",
+      "scale": 0.91,
+      "sink": 1.0
+    },
+    "projects": [
+      {
+        "m": "pirate-kit/ship-pirate-medium",
+        "scale": 0.91,
+        "sink": 1.0
+      },
+      {
+        "m": "pirate-kit/ship-small",
+        "scale": 0.83,
+        "sink": 1.0
+      },
+      {
+        "m": "pirate-kit/ship-pirate-small",
+        "scale": 0.83,
+        "sink": 1.0
+      },
+      {
+        "m": "pirate-kit/ship-medium",
+        "scale": 0.83,
+        "sink": 1.0
+      },
+      {
+        "m": "pirate-kit/ship-large",
+        "scale": 0.75,
+        "sink": 1.0
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#c9a86a",
+        "#efdcab"
+      ],
+      "Mountain": [
+        "#5f8f4a",
+        "#a7c47a"
+      ]
+    },
+    "path": "#a3784c",
+    "cap": "#c9a86a",
+    "stone": "#d9c79c",
+    "water": "#2fa6c9",
+    "islet": [
+      "#efdcab",
+      "#b38b5b",
+      "#8f6d52",
+      "#4f9a4a"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "pirate-kit/palm-detailed-straight",
+        "pirate-kit/palm-detailed-bend",
+        "pirate-kit/palm-bend"
+      ],
+      "count": 36,
+      "size": [
+        2.6,
+        3.8
+      ],
+      "pad": 1.1
+    },
+    {
+      "models": [
+        "pirate-kit/barrel",
+        "pirate-kit/crate",
+        "pirate-kit/crate-bottles",
+        "pirate-kit/cannon"
+      ],
+      "count": 34,
+      "size": [
+        0.6,
+        1.0
+      ],
+      "pad": 0.5
+    },
+    {
+      "models": [
+        "pirate-kit/rocks-sand-a",
+        "pirate-kit/rocks-sand-b",
+        "pirate-kit/patch-sand-foliage",
+        "pirate-kit/grass-plant"
+      ],
+      "count": 50,
+      "size": [
+        0.4,
+        1.0
+      ],
+      "pad": 0.4
+    },
+    {
+      "models": [
+        "pirate-kit/flag-pirate-high",
+        "pirate-kit/flag-high-pennant"
+      ],
+      "count": 10,
+      "size": [
+        2.4,
+        3.0
+      ],
+      "pad": 0.6
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "pirate-kit/palm-detailed-straight",
+        "pirate-kit/palm-straight"
+      ],
+      "count": 22,
+      "size": [
+        1.8,
+        2.6
+      ]
+    },
+    {
+      "models": [
+        "pirate-kit/rocks-a",
+        "pirate-kit/rocks-b",
+        "pirate-kit/rocks-c"
+      ],
+      "count": 16,
+      "size": [
+        0.8,
+        1.6
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-male-a",
+    "mini-characters/character-female-b",
+    "mini-characters/character-male-d",
+    "mini-characters/character-female-c",
+    "mini-characters/character-male-e",
+    "mini-characters/character-female-f"
+  ],
+  "terrain": {
+    "model": "harbor.glb",
+    "y": 0.3,
+    "radius": 36,
+    "layout": {
+      "summit": [
+        0.0,
+        0.3,
+        -4.15
+      ],
+      "tools": {
+        "forge": {
+          "theta": 156.8,
+          "r": 7.579,
+          "face": 156.8
+        },
+        "library": {
+          "theta": 346.61,
+          "r": 7.161,
+          "face": 346.61
+        },
+        "beacon": {
+          "theta": 230.19,
+          "r": 10.363,
+          "face": 230.19
+        },
+        "archive": {
+          "theta": 33.69,
+          "r": 3.588,
+          "face": 33.69
+        },
+        "aviary": {
+          "theta": 107.74,
+          "r": 8.707,
+          "face": 107.74
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 52.81,
+          "r": 21.805,
+          "face": 24
+        },
+        {
+          "theta": 25.91,
+          "r": 17.952,
+          "face": 48
+        },
+        {
+          "theta": 4.81,
+          "r": 21.805,
+          "face": 72
+        },
+        {
+          "theta": 337.91,
+          "r": 17.952,
+          "face": 96
+        },
+        {
+          "theta": 316.81,
+          "r": 21.805,
+          "face": 120
+        },
+        {
+          "theta": 289.91,
+          "r": 17.952,
+          "face": 144
+        },
+        {
+          "theta": 268.81,
+          "r": 21.805,
+          "face": 168
+        },
+        {
+          "theta": 241.91,
+          "r": 17.952,
+          "face": 192
+        },
+        {
+          "theta": 193.91,
+          "r": 17.952,
+          "face": 240
+        },
+        {
+          "theta": 172.81,
+          "r": 21.805,
+          "face": 264
+        },
+        {
+          "theta": 145.91,
+          "r": 17.952,
+          "face": 288
+        },
+        {
+          "theta": 124.81,
+          "r": 21.805,
+          "face": 312
+        },
+        {
+          "theta": 97.91,
+          "r": 17.952,
+          "face": 336
+        }
+      ],
+      "agora": {
+        "theta": 90.0,
+        "r": 18.244
+      },
+      "hotel": {
+        "theta": 220.81,
+        "r": 21.805
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -0.0,
+            12.27
+          ],
+          [
+            4.99,
+            11.21
+          ],
+          [
+            9.12,
+            8.21
+          ],
+          [
+            11.67,
+            3.79
+          ],
+          [
+            12.21,
+            -1.28
+          ],
+          [
+            10.63,
+            -6.14
+          ],
+          [
+            7.21,
+            -9.93
+          ],
+          [
+            2.55,
+            -12.0
+          ],
+          [
+            -2.55,
+            -12.0
+          ],
+          [
+            -7.21,
+            -9.93
+          ],
+          [
+            -10.63,
+            -6.14
+          ],
+          [
+            -12.21,
+            -1.28
+          ],
+          [
+            -11.67,
+            3.79
+          ],
+          [
+            -9.12,
+            8.21
+          ],
+          [
+            -4.99,
+            11.21
+          ],
+          [
+            -0.0,
+            18.24
+          ],
+          [
+            9.04,
+            20.3
+          ],
+          [
+            13.56,
+            12.21
+          ],
+          [
+            21.14,
+            6.87
+          ],
+          [
+            18.14,
+            -1.91
+          ],
+          [
+            19.25,
+            -11.11
+          ],
+          [
+            10.72,
+            -14.76
+          ],
+          [
+            4.62,
+            -21.74
+          ],
+          [
+            -3.79,
+            -17.85
+          ],
+          [
+            -13.06,
+            -17.98
+          ],
+          [
+            -15.8,
+            -9.12
+          ],
+          [
+            -22.1,
+            -2.32
+          ],
+          [
+            -17.35,
+            5.64
+          ],
+          [
+            -16.52,
+            14.87
+          ],
+          [
+            -7.42,
+            16.67
+          ],
+          [
+            0.0,
+            -0.0
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            17
+          ],
+          [
+            3,
+            18
+          ],
+          [
+            4,
+            19
+          ],
+          [
+            5,
+            20
+          ],
+          [
+            6,
+            21
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            23
+          ],
+          [
+            9,
+            24
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            11,
+            26
+          ],
+          [
+            12,
+            27
+          ],
+          [
+            13,
+            28
+          ],
+          [
+            14,
+            29
+          ],
+          [
+            0,
+            30
+          ],
+          [
+            3,
+            30
+          ],
+          [
+            6,
+            30
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            12,
+            30
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      16.59,
+      54.73,
+      72.98
+    ],
+    "target": [
+      0.0,
+      -2.49,
+      2.99
+    ],
+    "fov": 36.6
+  },
+  "sky": {
+    "hour": 14.8
+  },
+  "light": {
+    "exposure": 1.306,
+    "hemi": 1.533,
+    "env": 1.533
+  }
+}

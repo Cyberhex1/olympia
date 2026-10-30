@@ -1,0 +1,6 @@
+/* In Elevation: a side view, pastel and rounded */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito+Sans:wght@600;800&display=swap');
+:root { --cream: #fff8f0; --ink: #3a2e4a; --muted: #8a7d99; --red: #e0607e; --soft: #f7ecf2; --soft2: #f1e0ea; --serif: 'Baloo 2', sans-serif; --sans: 'Nunito Sans', sans-serif; }
+#title .realm { font-family: 'Baloo 2', sans-serif; }
+#face, #feed, #card { border-radius: 20px; }
+#face .doing, #feed li { font-style: normal; }

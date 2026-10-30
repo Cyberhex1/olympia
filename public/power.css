@@ -1,0 +1,25 @@
+/* Settings → Phone (public/js/power.js) */
+#settings .power a { color: var(--red); }
+#settings .switch { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; border: 2px solid rgba(0,0,0,.08); background: #fff8; cursor: pointer; }
+#settings .switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+#settings .switch .track { flex: none; width: 42px; height: 24px; border-radius: 99px; background: rgba(0,0,0,.18); position: relative; margin-top: 1px; transition: background .15s; }
+#settings .switch .track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); transition: transform .15s; }
+#settings .switch input:checked + .track { background: var(--green); }
+#settings .switch input:checked + .track::after { transform: translateX(18px); }
+#settings .switch input:focus-visible + .track { outline: 3px solid rgba(181, 69, 47, .4); outline-offset: 2px; }
+#settings .switch input:disabled ~ * { opacity: .6; } #settings .switch:has(input:disabled) { cursor: default; }
+#settings .switch .what b { display: block; font: 700 15px/1.3 Inter, sans-serif; }
+#settings .switch .what small { display: block; font: 400 12.5px/1.4 Inter, sans-serif; color: var(--muted); margin-top: 2px; }
+#settings .power .msg { margin: 6px 2px 0; font: 500 12.5px/1.4 Inter, sans-serif; color: var(--muted); }
+#settings .power .msg:empty { display: none; } #settings .power .msg.bad { color: var(--danger); }
+#settings .nic { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0 0 10px; font: 500 12.5px/1.4 'JetBrains Mono', monospace; }
+#settings .nic dt { color: var(--muted); } #settings .nic dd { margin: 0; overflow-wrap: anywhere; }
+#settings .checks { list-style: none; margin: 0 0 10px; padding: 0; font: 500 13px/1.4 Inter, sans-serif; }
+#settings .checks li { display: flex; gap: 8px; padding: 4px 0; }
+#settings .checks li > span:first-child { width: 14px; flex: none; font-weight: 700; }
+#settings .checks small { display: block; color: var(--muted); font-size: 12px; }
+#settings .checks .ok { color: var(--green); } #settings .checks .no { color: var(--danger); } #settings .checks .unk { color: var(--amber); }
+#settings .verdict { margin: 0 0 8px; font: 700 13px/1.4 Inter, sans-serif; } #settings .verdict.good { color: var(--green); } #settings .verdict.bad { color: var(--danger); }
+#settings .warn { margin: 0 0 10px; padding: 10px 12px; border-radius: 12px; background: #fbe6c8; border-left: 4px solid var(--amber); font: 500 13px/1.4 Inter, sans-serif; }
+#settings .steps { margin: 0; padding-left: 20px; font: 500 13px/1.5 Inter, sans-serif; }
+#settings .steps li { margin: 2px 0; } #settings .steps b { font-family: 'JetBrains Mono', monospace; font-weight: 500; overflow-wrap: anywhere; }

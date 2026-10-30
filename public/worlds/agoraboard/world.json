@@ -1,0 +1,8 @@
+{
+  "look": true,
+  "skin": "skin.css",
+  "tagline": "the board, and the island beside it",
+  "finish": {
+    "saturation": 1.05
+  }
+}

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#14121e" />
+  <title>Olympia</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
+  <style>
+    :root { --cream: #fbf6ea; --ink: #2a2522; --muted: #7b6f66; --red: #b5452f; --green: #3fb46f; --amber: #f0a236; --danger: #e0533d; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #14121e; color: var(--ink); font: 500 15px/1.4 Inter, system-ui, sans-serif; padding: max(14px, env(safe-area-inset-top)) 14px 40px; }
+    header { display: flex; justify-content: space-between; align-items: center; color: #fff; margin-bottom: 12px; }
+    header h1 { font: 800 22px/1 Inter, sans-serif; letter-spacing: .02em; margin: 0; }
+    header a { color: #fff; opacity: .8; font-size: 13px; text-decoration: none; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 0 14px; min-height: 40px; display: inline-flex; align-items: center; }
+    .pill { display: inline-flex; gap: 6px; align-items: center; font: 700 11px/1 ui-monospace, monospace; letter-spacing: .12em; color: #fff; opacity: .85; }
+    .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; } .pill.live .dot { background: #ff4b4b; }
+    section { background: var(--cream); border-radius: 16px; padding: 12px 14px; margin-bottom: 12px; }
+    section.needs { border: 2px solid #ff4b3a; }
+    h2 { font: 700 11px/1.3 ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin: 0 0 6px; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    li { padding: 9px 0; border-top: 1px solid rgba(0,0,0,.07); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+    li:first-child { border-top: 0; }
+    li .txt { flex: 1; min-width: 0; }
+    li b { display: block; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    li small { display: block; color: var(--muted); font: 500 12px/1.4 ui-monospace, monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    li a { flex: none; background: var(--ink); color: var(--cream); text-decoration: none; border-radius: 999px; padding: 0 16px; min-height: 40px; display: inline-flex; align-items: center; font-weight: 700; font-size: 14px; }
+    /* a thread row: tap the text to open what it has been doing */
+    button.txt { all: unset; box-sizing: border-box; flex: 1; min-width: 0; min-height: 44px; display: flex; gap: 8px; align-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button.txt > span { flex: 1; min-width: 0; }
+    button.txt::after { content: '›'; flex: none; font: 700 20px/1 Inter, sans-serif; color: var(--muted); transition: transform .15s; }
+    button.txt[aria-expanded="true"]::after { transform: rotate(90deg); }
+    button.txt:focus-visible { outline: 3px solid rgba(181, 69, 47, .4); outline-offset: 2px; border-radius: 8px; }
+    button.txt[aria-expanded="true"] b, button.txt[aria-expanded="true"] small { white-space: normal; }
+    .more { flex: 1 1 100%; min-width: 0; padding: 4px 0 6px; font-size: 14px; }
+    .more h3 { font: 700 10px/1.3 ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin: 10px 0 4px; }
+    .more h3 i { font-style: normal; color: var(--muted); letter-spacing: .04em; text-transform: none; }
+    .more h3:first-child { margin-top: 2px; }
+    .more ul, .more ol { margin: 0; padding: 0; list-style: none; }
+    .more li { display: flex; flex-wrap: nowrap; gap: 6px; align-items: baseline; padding: 3px 0; border-top: 0; font-size: 13.5px; }
+    .more li > span:first-child { width: 14px; flex: none; color: var(--muted); }
+    .more li > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+    .more .check li.done { color: var(--muted); } .more .check li.done > span:first-child { color: var(--green); }
+    .more .check li.doing { font-weight: 700; } .more .check li.doing > span:first-child { color: var(--amber); }
+    .more .steps li > span:first-child { width: auto; font: 500 11px/1 ui-monospace, monospace; min-width: 52px; }
+    .more .steps em { font-style: normal; color: var(--ink); }
+    .more .files li { font: 500 12px/1.45 ui-monospace, monospace; overflow-wrap: anywhere; } .more .files i { color: var(--muted); font-style: normal; }
+    .more blockquote { margin: 0; padding: 8px 10px; background: #f1e8d4; border-radius: 10px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 40vh; overflow: auto; }
+    .more .muted { color: var(--muted); font-style: italic; }
+    .empty { color: var(--muted); font-style: italic; }
+    .usage { color: #fff; opacity: .85; font: 600 12px/1.4 ui-monospace, monospace; margin: -4px 2px 12px; }
+    .done { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .done span { color: var(--green); }
+    [hidden] { display: none !important; }
+    #power { position: relative; }
+    .power-row { display: flex; gap: 10px; align-items: center; }
+    .power-row .txt { flex: 1; min-width: 0; color: var(--muted); font-size: 13px; }
+    .btn { border: 0; border-radius: 999px; padding: 0 18px; min-height: 44px; font: 700 15px/1 Inter, system-ui, sans-serif; cursor: pointer; background: var(--ink); color: var(--cream); }
+    .btn:disabled { background: rgba(0,0,0,.12); color: var(--muted); cursor: default; }
+    .btn.go { background: var(--red); } .btn.soft { background: #ece2cd; color: var(--ink); }
+    .why { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--muted); background: none; background-clip: content-box; color: var(--muted); font: italic 700 15px/1 Georgia, serif; cursor: pointer; padding: 0; position: relative; }
+    .why::before { content: ''; position: absolute; inset: -6px; } /* 46 px to tap, 34 px to see */
+    .why[aria-expanded="true"] { border-color: var(--red); color: var(--red); }
+    .ask { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,.07); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .ask p { flex: 1 1 100%; margin: 0 0 2px; }
+    .ask b.n { font: 800 22px/1 Inter, sans-serif; color: var(--red); }
+    .note { margin: 8px 0 0; color: var(--muted); font-size: 13px; } .note:empty { display: none; } .note.bad { color: var(--danger); }
+    .pop { position: absolute; left: 0; right: 0; bottom: calc(100% + 8px); z-index: 5; background: var(--cream); border-radius: 16px; padding: 14px 16px 12px; box-shadow: 0 10px 30px rgba(0,0,0,.45); border: 2px solid var(--red); }
+    .pop h3 { font: 800 17px/1.25 Inter, sans-serif; margin: 0 28px 8px 0; }
+    .pop ul { margin: 0 0 8px; } .pop li { display: list-item; list-style: none; padding: 5px 0 5px 18px; position: relative; font-size: 14px; border-top: 0; }
+    .pop li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    .pop p { margin: 6px 0 0; font-size: 14px; color: var(--ink); } .pop p.muted { color: var(--muted); }
+    .pop .x { position: absolute; top: 2px; right: 2px; border: 0; background: none; font-size: 26px; line-height: 1; color: var(--muted); cursor: pointer; width: 44px; height: 44px; padding: 0; }
+  </style>
+</head>
+<body>
+  <header><h1>OLYMPIA</h1><span class="pill" id="pill"><span class="dot"></span><span id="pilltxt">CONNECTING</span></span><a href="/">Island ↗</a></header>
+  <div class="usage" id="usage"></div>
+  <section class="needs" id="needs" hidden><h2>Needs you</h2><ul></ul></section>
+  <section id="working"><h2>Working now</h2><ul></ul></section>
+  <section id="today"><h2>Today</h2><ul></ul></section>
+  <section id="idle"><h2>Waiting for you to reply</h2><ul></ul></section>
+  <section id="power" hidden>
+    <h2>This PC</h2>
+    <div class="power-row">
+      <button class="btn" id="sleep-btn">Sleep PC</button>
+      <span class="txt" id="sleep-sub">Your work stays open.</span>
+      <button class="why" id="why-btn" aria-label="Why sleep instead of shutting down?" aria-expanded="false" aria-controls="why-pop">i</button>
+    </div>
+    <div class="ask" id="sleep-ask" hidden><p>Put the PC to sleep? It waits 10 seconds, so you can still cancel.</p><button class="btn go" id="sleep-yes">Yes, sleep</button><button class="btn soft" id="sleep-no">Not now</button></div>
+    <div class="ask" id="sleep-count" hidden><p>Going to sleep in <b class="n" id="sleep-n">10</b> s</p><button class="btn go" id="sleep-cancel">Cancel</button></div>
+    <p class="note" id="sleep-msg"></p>
+    <div class="pop" id="why-pop" role="dialog" aria-labelledby="why-h" hidden>
+      <button class="x" id="why-x" aria-label="Close">×</button>
+      <h3 id="why-h">Why sleep instead of shutting down?</h3>
+      <ul>
+        <li>Sleep keeps your work open and wakes in a couple of seconds.</li>
+        <li>It uses only about 2–5 watts, so a few dollars a year.</li>
+        <li>It doesn't wear out your hardware: fans, drives and the graphics card are all stopped.</li>
+        <li>Desktops also save your work to disk (hybrid sleep), so a power cut doesn't lose it.</li>
+        <li>Your phone can wake the PC over the network (Wake-on-LAN). That works reliably from sleep, not from shutdown.</li>
+      </ul>
+      <p>Restart about once a week to clear slowdowns.</p>
+      <p class="muted">Shut down fully when you're away for a long time, a storm is coming, or a laptop could be stolen.</p>
+    </div>
+  </section>
+  <script type="module">
+    import { toolInfo, toolLabel } from '/js/tools.js';
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const ago = (t) => { const s = Math.max(0, (Date.now() - t) / 1000); return s < 60 ? 'just now' : s < 3600 ? `${Math.round(s / 60)} min ago` : s < 86400 ? `${Math.round(s / 3600)} h ago` : `${Math.round(s / 86400)} d ago`; };
+    const fmt = (n) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(n || 0));
+    // details of a thread, opened by tapping its row: the same /api/session/:id the island's cards use
+    const open = new Set(), details = new Map(); // id -> { at, data, loading }
+    const hhmm = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    const MARK = { done: '✓', doing: '✱', todo: '○' };
+    const stepHTML = (tool, detail) => (detail ? `${esc(toolInfo(tool).verb)}: <em>${esc(detail)}</em>` : `${esc(toolInfo(tool).verb)} · ${esc(toolLabel(tool))}`);
+    function detailsHTML(id) {
+      let d = details.get(id);
+      if (!d) { d = { at: 0, data: null, loading: false }; details.set(id, d); }
+      if (!d.loading && Date.now() - d.at > 4000) {
+        d.loading = true;
+        fetch(`/api/session/${encodeURIComponent(id)}`).then((x) => (x.ok ? x.json() : null)).then((data) => { d.data = data; }).catch(() => {})
+          .finally(() => { d.loading = false; d.at = Date.now(); if (last) render(last); });
+      }
+      const x = d.data;
+      if (!x) return `<div class="more"><p class="muted">${d.at ? "Couldn't read this thread." : 'Loading what it has been doing…'}</p></div>`;
+      const parts = [];
+      if (x.checklist?.length) parts.push(`<h3>Checklist</h3><ul class="check">${x.checklist.map((c) => `<li class="${esc(c.status)}"><span>${MARK[c.status] || ''}</span><span>${esc(c.text)}</span></li>`).join('')}</ul>`);
+      if (x.lastReply) parts.push(`<h3>Last said <i>${ago(x.lastReply.at)}</i></h3><blockquote>${esc(x.lastReply.text)}</blockquote>`);
+      if (x.steps?.length) parts.push(`<h3>Recent steps <i>${x.stepsTotal} in view</i></h3><ol class="steps">${x.steps.slice(0, 8).map((s) => `<li><span>${hhmm(s.at)}</span><span>${stepHTML(s.tool, s.detail)}</span></li>`).join('')}</ol>`);
+      if (x.files?.length) parts.push(`<h3>Files changed <i>${x.filesTotal}</i></h3><ul class="files">${x.files.map((f) => `<li>${esc(f.name)}${f.edits > 1 ? ` <i>×${f.edits}</i>` : ''}</li>`).join('')}</ul>`);
+      return `<div class="more">${parts.join('') || '<p class="muted">Nothing recorded yet.</p>'}</div>`;
+    }
+    const item = (c, sub, link = c.link) => {
+      const on = open.has(c.id);
+      return `<li><button class="txt" data-id="${esc(c.id)}" aria-expanded="${on}"><span><b>${esc(c.title)}</b><small>${esc(sub)}</small></span></button>${link && /^https:\/\//.test(link) ? `<a href="${esc(link)}" target="_blank" rel="noopener">Open</a>` : ''}${on ? detailsHTML(c.id) : ''}</li>`;
+    };
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('button.txt[data-id]'); if (!b) return;
+      const id = b.dataset.id;
+      if (open.has(id)) open.delete(id); else open.add(id);
+      if (last) render(last);
+    });
+    const fill = (id, rows, empty) => { const s = document.getElementById(id); s.querySelector('ul').innerHTML = rows.length ? rows.join('') : `<li class="empty">${esc(empty)}</li>`; return s; };
+    let last = null;
+    function render(st) {
+      last = st;
+      // keep keyboard focus on the row that was tapped when the list redraws
+      const focused = document.activeElement?.matches?.('button.txt') ? document.activeElement.dataset.id : null;
+      draw(st);
+      if (focused) document.querySelector(`button.txt[data-id="${CSS.escape(focused)}"]`)?.focus({ preventScroll: true });
+    }
+    function draw(st) {
+      const all = (st.claude || []).filter((c) => c.kind === 'session');
+      const where = (c) => c.project || 'elsewhere';
+      // same order and count as the island: questions and prompts first, oldest first; maybe-stuck ones after, not counted
+      const stuck = (c) => c.needs?.kind === 'stuck';
+      const needs = all.filter((c) => c.state === 'waiting').sort((a, b) => stuck(a) - stuck(b) || (a.needs?.since || 0) - (b.needs?.since || 0));
+      const asking = needs.filter((c) => !stuck(c)).length;
+      fill('needs', needs.map((c) => item(c, `${stuck(c) ? 'Maybe stuck: ' : ''}${c.needs?.reason || ''} · ${where(c)} · ${ago(c.needs?.since || c.lastActive)}`)), '').hidden = !needs.length;
+      document.title = asking ? `(${asking}) Olympia` : 'Olympia';
+      fill('working', all.filter((c) => c.state === 'working').map((c) => item(c, `${where(c)}${c.detail ? ` · ${c.detail}` : ''}`)), 'Nothing running right now.');
+      fill('idle', all.filter((c) => c.state === 'idle' && Date.now() - c.lastActive < 24 * 3600_000).slice(0, 12).map((c) => item(c, `${where(c)} · finished ${ago(c.lastActive)}`)), 'Nobody is waiting.');
+      const u = st.usage, five = u?.plan?.rows?.find((r) => /5-hour/.test(r.label));
+      document.getElementById('usage').textContent = u ? (five ? `5-hour limit ${Math.round(five.percent)}% used · ${fmt(u.today.total)} tokens today` : `⚡ ${fmt(u.h5.total)} tokens in 5h · ${fmt(u.today.total)} today`) : '';
+      document.getElementById('pill').className = 'pill live'; document.getElementById('pilltxt').textContent = 'LIVE';
+    }
+    let recapAt = 0;
+    async function recap() {
+      if (Date.now() - recapAt < 30_000) return; recapAt = Date.now();
+      const r = await fetch('/api/recap').then((x) => (x.ok ? x.json() : null)).catch(() => null); if (!r) return;
+      fill('today', r.projects.map((p) => {
+        const done = p.sessions.flatMap((s) => s.done);
+        return `<li><div class="txt"><b>${esc(p.name || p.id)}</b><small>${p.sessions.length} thread${p.sessions.length === 1 ? '' : 's'} · ${p.filesTotal} files · ${p.commits?.length || 0} commits</small>${done.slice(0, 3).map((d) => `<div class="done"><span>✓</span> ${esc(d)}</div>`).join('')}${done.length > 3 ? `<div class="done">+${done.length - 3} more</div>` : ''}</div></li>`;
+      }), 'A quiet day so far.');
+    }
+    // Sleep PC: shown only when "Allow Sleep from phone" is on. Confirm, then a 10 s countdown anyone can cancel.
+    const $ = (id) => document.getElementById(id);
+    let power = null, endsAt = 0, tick = null, statusAt = 0;
+    const say = (t, bad = false) => { $('sleep-msg').textContent = t; $('sleep-msg').className = bad ? 'note bad' : 'note'; };
+    function showPower() {
+      const p = power, sec = $('power');
+      sec.hidden = !p?.allowSleep;
+      if (sec.hidden) { closeWhy(); return; }
+      const counting = Boolean(p.pending);
+      $('sleep-btn').disabled = !p.supported || !p.canSleep || counting;
+      $('sleep-sub').textContent = !p.supported ? "This PC's system can't be put to sleep from here." : !p.canSleep ? 'Only a paired phone can do this.' : p.dryRun ? "Test mode: the PC won't really sleep." : 'Your work stays open.';
+      if (!p.canSleep && p.supported) say('On the PC, turn on "Phones need a code", then pair this phone with the code.');
+      $('sleep-count').hidden = !counting;
+      if (counting) { $('sleep-ask').hidden = true; endsAt = Date.now() + p.pending.left * 1000; if (!tick) tick = setInterval(count, 250); count(); }
+      else if (tick) { clearInterval(tick); tick = null; }
+    }
+    function count() {
+      const left = Math.max(0, Math.ceil((endsAt - Date.now()) / 1000));
+      $('sleep-n').textContent = left;
+      if (left === 0) {
+        clearInterval(tick); tick = null; $('sleep-count').hidden = true; power.pending = null; $('sleep-btn').disabled = false;
+        say(power.dryRun ? 'Test mode: the PC would be asleep now.' : 'The PC is going to sleep. Wake it with your Wake-on-LAN app.');
+      } else if (Date.now() - statusAt > 2000) loadPower(); // someone may have cancelled on another device
+    }
+    async function loadPower() {
+      statusAt = Date.now();
+      const r = await fetch('/api/power/status', { cache: 'no-store' }).then((x) => (x.ok ? x.json() : null)).catch(() => null);
+      if (!r) return;
+      if (power?.pending && !r.pending && !r.sleptAt) say('Sleep was cancelled.');
+      power = r; showPower();
+    }
+    const post = (what) => fetch(`/api/power/${what}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })
+      .then(async (x) => ({ status: x.status, body: await x.json().catch(() => ({})) })).catch(() => ({ status: 0, body: {} }));
+    $('sleep-btn').onclick = () => { say(''); $('sleep-ask').hidden = false; $('sleep-yes').focus(); };
+    $('sleep-no').onclick = () => { $('sleep-ask').hidden = true; };
+    $('sleep-yes').onclick = async () => {
+      $('sleep-ask').hidden = true;
+      const r = await post('sleep');
+      if (r.status === 202) { say(''); power = { ...power, pending: r.body.pending }; showPower(); return; }
+      if (r.status === 403 && r.body.error === 'off') { power = { ...power, allowSleep: false }; showPower(); return; }
+      say(r.body.message || (r.status ? `The PC said no (${r.status}).` : "Couldn't reach the PC."), true);
+      loadPower();
+    };
+    $('sleep-cancel').onclick = async () => {
+      const r = await post('cancel');
+      if (r.status === 200) { power = { ...power, pending: null }; showPower(); say('Sleep was cancelled.'); } else say("Couldn't cancel. Check the PC.", true);
+    };
+    // the "i": why sleep beats shutting down
+    const openWhy = () => { $('why-pop').hidden = false; $('why-btn').setAttribute('aria-expanded', 'true'); $('why-x').focus(); };
+    function closeWhy() { $('why-pop').hidden = true; $('why-btn').setAttribute('aria-expanded', 'false'); }
+    $('why-btn').onclick = (e) => { e.stopPropagation(); if ($('why-pop').hidden) openWhy(); else closeWhy(); };
+    $('why-x').onclick = () => { closeWhy(); $('why-btn').focus(); };
+    document.addEventListener('click', (e) => { if (!$('why-pop').hidden && !$('why-pop').contains(e.target)) closeWhy(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('why-pop').hidden) { closeWhy(); $('why-btn').focus(); } });
+    loadPower();
+    const es = new EventSource('/api/stream');
+    es.addEventListener('state', (m) => { render(JSON.parse(m.data)); recap(); if (Date.now() - statusAt > 10_000) loadPower(); });
+    es.onerror = () => { document.getElementById('pill').className = 'pill'; document.getElementById('pilltxt').textContent = 'RECONNECTING'; };
+  </script>
+</body>
+</html>

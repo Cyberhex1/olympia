@@ -1,0 +1,736 @@
+{
+  "tagline": "your station, holding orbit",
+  "skin": "skin.css",
+  "sky": {
+    "hour": 23.5,
+    "clouds": false
+  },
+  "bloom": 0.55,
+  "finish": {
+    "ink": "#040814",
+    "strength": 0.6,
+    "warmth": -0.04,
+    "saturation": 0.8
+  },
+  "names": {
+    "summit": [
+      "Command Deck",
+      "Where finished work is sent up to. Home of the messenger and the daily recap"
+    ],
+    "forge": [
+      "Engineering",
+      "Where commands are hammered out"
+    ],
+    "library": [
+      "The Data Core",
+      "Files read, written and patched"
+    ],
+    "beacon": [
+      "The Comms Array",
+      "Looks out across the web"
+    ],
+    "archive": [
+      "Cold Storage",
+      "Memories and past sessions"
+    ],
+    "aviary": [
+      "The Launch Bay",
+      "Messages and helpers launch from here"
+    ],
+    "agora": [
+      "The Mess Hall",
+      "Where tasks are posted and the crew gathers"
+    ],
+    "hotel": [
+      "The Docking Bay",
+      "Visiting craft dock here: work outside C:\\code. They undock after two quiet days."
+    ]
+  },
+  "buildings": {
+    "summit": {
+      "parts": [
+        [
+          "space-station-kit/table-display-planet",
+          0,
+          0
+        ]
+      ],
+      "scale": 3.4
+    },
+    "forge": {
+      "parts": [
+        [
+          "space-station-kit/computer-system",
+          0,
+          0
+        ],
+        [
+          "space-station-kit/container-tall",
+          1.1,
+          0
+        ],
+        [
+          "space-station-kit/pipe-ring-colored",
+          -0.9,
+          0
+        ]
+      ],
+      "scale": 2.72
+    },
+    "library": {
+      "parts": [
+        [
+          "space-station-kit/computer-system",
+          0,
+          0
+        ],
+        [
+          "space-station-kit/computer-system",
+          1.0,
+          0
+        ],
+        [
+          "space-station-kit/computer-screen",
+          0.5,
+          0.8
+        ]
+      ],
+      "scale": 2.72
+    },
+    "beacon": {
+      "parts": [
+        [
+          "space-station-kit/display-wall-wide",
+          0,
+          0
+        ],
+        [
+          "space-station-kit/structure",
+          0,
+          0.2,
+          0,
+          1.4
+        ]
+      ],
+      "scale": 2.72
+    },
+    "archive": {
+      "parts": [
+        [
+          "space-station-kit/container",
+          0,
+          0
+        ],
+        [
+          "space-station-kit/container-wide",
+          1.1,
+          0
+        ],
+        [
+          "space-station-kit/container-flat",
+          0.5,
+          1.0
+        ]
+      ],
+      "scale": 2.72
+    },
+    "aviary": {
+      "parts": [
+        [
+          "car-kit/race-future",
+          0,
+          0,
+          0,
+          0.6
+        ],
+        [
+          "space-station-kit/skip",
+          1.5,
+          0
+        ]
+      ],
+      "scale": 2.72
+    },
+    "agora": {
+      "parts": [
+        [
+          "space-station-kit/table-large",
+          0,
+          0
+        ],
+        [
+          "space-station-kit/chair",
+          -0.9,
+          0,
+          90
+        ],
+        [
+          "space-station-kit/chair",
+          0.9,
+          0,
+          -90
+        ],
+        [
+          "space-station-kit/chair",
+          0,
+          0.8,
+          180
+        ]
+      ],
+      "scale": 2.72
+    },
+    "hotel": {
+      "parts": [
+        [
+          "car-kit/race-future",
+          -0.6,
+          0.2,
+          30,
+          0.35
+        ],
+        [
+          "car-kit/race-future",
+          0.7,
+          -0.6,
+          -20,
+          0.35
+        ]
+      ],
+      "scale": 3.4
+    },
+    "projects": [
+      {
+        "parts": [
+          [
+            "space-station-kit/computer-system",
+            -0.7,
+            -1.2
+          ],
+          [
+            "space-station-kit/computer-screen",
+            0.6,
+            -1.2
+          ],
+          [
+            "space-station-kit/chair",
+            0.1,
+            -0.4,
+            180
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "space-station-kit/computer-wide",
+            0,
+            -1.2
+          ],
+          [
+            "space-station-kit/chair-armrest",
+            0.4,
+            0.2,
+            200
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "space-station-kit/table-display",
+            0,
+            0
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "space-station-kit/container",
+            -0.6,
+            -1.0
+          ],
+          [
+            "space-station-kit/container-tall",
+            0.4,
+            -1.1
+          ],
+          [
+            "space-station-kit/chair-cushion",
+            0.2,
+            0.3
+          ]
+        ],
+        "scale": 3.4
+      },
+      {
+        "parts": [
+          [
+            "space-station-kit/computer",
+            0.6,
+            -1.2
+          ],
+          [
+            "space-station-kit/table-display-small",
+            -0.3,
+            0.1
+          ]
+        ],
+        "scale": 3.4
+      }
+    ]
+  },
+  "ground": {
+    "island": {
+      "IslandTop": [
+        "#4b5160",
+        "#9aa2b2"
+      ],
+      "Mountain": [
+        "#3b404c",
+        "#8d95a6"
+      ],
+      "IslandSides": "#8892a6"
+    },
+    "path": "#ffb547",
+    "cap": "#5b6273",
+    "stone": "#7fe3ff",
+    "water": "#3df0ff",
+    "islets": true,
+    "islet": [
+      "#7d8597",
+      "#5b6273",
+      "#3b404c",
+      "#ffb547"
+    ]
+  },
+  "scatter": [
+    {
+      "models": [
+        "space-station-kit/rocks",
+        "space-station-kit/skip-rocks"
+      ],
+      "count": 26,
+      "size": [
+        0.6,
+        1.2
+      ],
+      "pad": 0.7
+    },
+    {
+      "models": [
+        "space-station-kit/container",
+        "space-station-kit/container-flat",
+        "space-station-kit/container-tall"
+      ],
+      "count": 30,
+      "size": [
+        0.8,
+        1.6
+      ],
+      "pad": 0.6
+    },
+    {
+      "models": [
+        "space-station-kit/pipe",
+        "space-station-kit/pipe-ring",
+        "space-station-kit/structure-barrier"
+      ],
+      "count": 30,
+      "size": [
+        0.6,
+        1.4
+      ],
+      "pad": 0.5
+    }
+  ],
+  "slope": [
+    {
+      "models": [
+        "space-station-kit/structure",
+        "space-station-kit/pipe-ring-colored",
+        "space-station-kit/container-wide"
+      ],
+      "count": 34,
+      "size": [
+        1.0,
+        2.2
+      ]
+    }
+  ],
+  "residents": [
+    "mini-characters/character-female-a",
+    "mini-characters/character-male-b",
+    "mini-characters/character-female-c",
+    "mini-characters/character-male-d",
+    "mini-characters/character-female-e",
+    "mini-characters/character-male-f"
+  ],
+  "terrain": {
+    "fill": {
+      "sky": "#9fb4ff",
+      "ground": "#2a2f48",
+      "power": 1.4
+    },
+    "lampColor": "#9fd8ff",
+    "lampPower": 60,
+    "model": "space.glb",
+    "y": 1.19,
+    "radius": 36,
+    "layout": {
+      "summit": [
+        -6.8,
+        1.19,
+        -6.8
+      ],
+      "tools": {
+        "forge": {
+          "theta": 127.22,
+          "r": 33.729,
+          "face": 90.0
+        },
+        "library": {
+          "theta": 110.79,
+          "r": 28.732,
+          "face": 90.0
+        },
+        "beacon": {
+          "theta": 90.0,
+          "r": 26.86,
+          "face": 90.0
+        },
+        "archive": {
+          "theta": 69.21,
+          "r": 28.732,
+          "face": 90.0
+        },
+        "aviary": {
+          "theta": 52.78,
+          "r": 33.729,
+          "face": 90.0
+        }
+      },
+      "projectSlots": [
+        {
+          "theta": 135.0,
+          "r": 28.85,
+          "face": 90
+        },
+        {
+          "theta": 108.43,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 71.57,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 45.0,
+          "r": 28.85,
+          "face": 90
+        },
+        {
+          "theta": 161.57,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 135.0,
+          "r": 9.617,
+          "face": 90
+        },
+        {
+          "theta": 45.0,
+          "r": 9.617,
+          "face": 90
+        },
+        {
+          "theta": 18.43,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 198.43,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 315.0,
+          "r": 9.617,
+          "face": 90
+        },
+        {
+          "theta": 341.57,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 251.57,
+          "r": 21.503,
+          "face": 90
+        },
+        {
+          "theta": 288.43,
+          "r": 21.503,
+          "face": 90
+        }
+      ],
+      "agora": {
+        "theta": 180.0,
+        "r": 26.69,
+        "face": 180.0
+      },
+      "hotel": {
+        "theta": 315.0,
+        "r": 28.85
+      },
+      "ringRoad": 14,
+      "paths": {
+        "nodes": [
+          [
+            -20.4,
+            20.4
+          ],
+          [
+            -6.8,
+            20.4
+          ],
+          [
+            6.8,
+            20.4
+          ],
+          [
+            20.4,
+            20.4
+          ],
+          [
+            -20.4,
+            6.8
+          ],
+          [
+            -6.8,
+            6.8
+          ],
+          [
+            6.8,
+            6.8
+          ],
+          [
+            20.4,
+            6.8
+          ],
+          [
+            -20.4,
+            -6.8
+          ],
+          [
+            -6.8,
+            -6.8
+          ],
+          [
+            6.8,
+            -6.8
+          ],
+          [
+            20.4,
+            -6.8
+          ],
+          [
+            -20.4,
+            -20.4
+          ],
+          [
+            -6.8,
+            -20.4
+          ],
+          [
+            6.8,
+            -20.4
+          ],
+          [
+            20.4,
+            -20.4
+          ],
+          [
+            -22.1,
+            28.39
+          ],
+          [
+            -10.2,
+            28.39
+          ],
+          [
+            0.0,
+            28.39
+          ],
+          [
+            10.2,
+            28.39
+          ],
+          [
+            22.1,
+            28.39
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            2
+          ],
+          [
+            19,
+            3
+          ]
+        ]
+      },
+      "pond": {
+        "theta": 0,
+        "r": 0,
+        "radius": 0
+      }
+    }
+  },
+  "camera": {
+    "pos": [
+      75.48,
+      80.24,
+      78.2
+    ],
+    "target": [
+      -0.34,
+      -2.04,
+      1.36
+    ],
+    "fov": 29.3
+  },
+  "light": {
+    "exposure": 1.829,
+    "hemi": 2.271,
+    "env": 2.271
+  }
+}
