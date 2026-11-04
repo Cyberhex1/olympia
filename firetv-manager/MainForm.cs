@@ -315,9 +315,11 @@ public sealed class MainForm : Form
         debloatList.Items.Clear();
         foreach (var d in Safety.Items)
         {
-            var status = !byPkg.TryGetValue(d.Package, out var a) ? "Not on stick" : a.Disabled ? "Disabled" : "Enabled";
+            var exists = byPkg.TryGetValue(d.Package, out var a);
+            var blocked = exists && !a!.Disabled && settings.BlockedByFireOs.Contains(d.Package);
+            var status = !exists ? "Not on stick" : a!.Disabled ? "Disabled" : blocked ? "Fire OS won't allow" : "Enabled";
             var it = new ListViewItem(new[] { d.Name, d.Package, d.Preset, status, d.Why }) { Tag = d };
-            if (a == null) it.ForeColor = SystemColors.GrayText;
+            if (a == null || blocked) it.ForeColor = SystemColors.GrayText;
             else if (a.Disabled) it.ForeColor = Color.Firebrick;
             debloatList.Items.Add(it);
         }
@@ -377,6 +379,7 @@ public sealed class MainForm : Form
                 var r = await FireTv.DisableAsync(adb!, p);
                 Report(p, r);
                 if (r.ok) settings.DisabledByMe.Add(p);
+                else if (r.msg.Contains("Fire OS blocked")) settings.BlockedByFireOs.Add(p);
             }
             settings.Save();
             await RefreshAllAsync();

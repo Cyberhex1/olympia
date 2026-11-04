@@ -11,6 +11,9 @@ public sealed class Settings
     /// <summary>Packages this app disabled, so they can be re-enabled in one click.</summary>
     public SortedSet<string> DisabledByMe { get; set; } = new();
 
+    /// <summary>Packages Fire OS refused to disable ("protected package"), so debloat stops offering them.</summary>
+    public SortedSet<string> BlockedByFireOs { get; set; } = new();
+
     static string Dir => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FireTVManager");
     static string FilePath => Path.Combine(Dir, "settings.json");
 

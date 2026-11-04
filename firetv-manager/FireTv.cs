@@ -137,6 +137,7 @@ public static class FireTv
 
     static string Explain(string output)
     {
+        if (output.Contains("protected package")) return "Fire OS blocked this: Amazon protects this app on your Fire OS version, so nothing was changed";
         if (output.Contains("SecurityException")) return "Fire OS blocked this for that app (" + FirstLine(output) + ")";
         if (output.Contains("INSTALL_FAILED_UPDATE_INCOMPATIBLE")) return "an older copy is signed differently; uninstall it first";
         if (output.Contains("INSTALL_FAILED_INSUFFICIENT_STORAGE")) return "not enough space on the stick";
