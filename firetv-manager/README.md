@@ -6,7 +6,7 @@ A small Windows app that manages a Fire TV stick over Wi-Fi ADB.
 - **Apps**: every app on the stick (yours, system, disabled and removed), with a filter. Open, force-stop,
   uninstall, disable or enable them.
 - **Force remove / Restore**: removes apps Fire OS won't let you uninstall or disable, using
-  `pm uninstall -k --user 0` (no root). A copy of the APK is saved to `%APPDATA%\FireTVManagerackups` first,
+  `pm uninstall -k --user 0` (no root). A copy of the APK is saved to `%APPDATA%\FireTVManager\backups` first,
   and Restore reinstalls it from the stick's system copy or that backup. A factory reset also brings built-in apps back.
 - **Running**: see what is running, force-stop selected apps, stop every background app of yours
   (the one on screen is left alone), and clear app caches.
