@@ -33,8 +33,12 @@ public sealed class MainForm : Form
 
     // apps tab
     readonly TextBox appFilter = new() { Width = 220, PlaceholderText = "Filter by package name", Margin = new Padding(3, 5, 3, 3) };
-    readonly CheckBox showSystem = new() { Text = "Show system apps", AutoSize = true, Margin = new Padding(8, 7, 3, 3) };
-    readonly ListView appsList = MakeList(("Package", 330), ("Type", 70), ("State", 80), ("Running", 90));
+    readonly ComboBox appKind = new()
+    {
+        DropDownStyle = ComboBoxStyle.DropDownList, Width = 150, Margin = new Padding(3, 5, 3, 3),
+    };
+    readonly Label appCount = new() { AutoSize = true, Margin = new Padding(8, 8, 3, 3) };
+    readonly ListView appsList = MakeList(("Package", 300), ("Name", 130), ("Type", 60), ("State", 75), ("Running", 70), ("Note", 260));
 
     // running tab
     readonly ListView runningList = MakeList(("Package", 360), ("Type", 70), ("Status", 120));
@@ -125,9 +129,16 @@ public sealed class MainForm : Form
         var uninstall = Btn("Uninstall", UninstallSelectedAsync);
         var disable = Btn("Disable", async () => await DisableAsync(Selected(appsList)));
         var enable = Btn("Enable", async () => await EnableAsync(Selected(appsList)));
-        bar.Controls.AddRange(new Control[] { appFilter, showSystem, launch, stop, uninstall, disable, enable });
+        var remove = Btn("Force remove", async () => await ForceRemoveAsync(Selected(appsList)));
+        var restore = Btn("Restore", async () => await RestoreAsync(Selected(appsList)));
+        var tip = new ToolTip();
+        tip.SetToolTip(remove, "Removes apps Fire OS won't let you uninstall, for your profile. A backup copy is saved on this PC first.");
+        tip.SetToolTip(restore, "Puts back apps that were force-removed.");
+        bar.Controls.AddRange(new Control[] { appFilter, appKind, launch, stop, uninstall, disable, enable, remove, restore, appCount });
+        appKind.Items.AddRange(new object[] { "All apps", "Installed by you", "System apps", "Disabled", "Removed" });
+        appKind.SelectedIndex = 0;
         appFilter.TextChanged += (_, _) => FillAppsList();
-        showSystem.CheckedChanged += (_, _) => FillAppsList();
+        appKind.SelectedIndexChanged += (_, _) => FillAppsList();
         page.Controls.Add(appsList);
         page.Controls.Add(bar);
         appsList.BringToFront();
@@ -161,9 +172,10 @@ public sealed class MainForm : Form
         debloatList.CheckBoxes = true;
         var note = new Label
         {
-            Dock = DockStyle.Top, AutoSize = false, Height = 44, Padding = new Padding(6, 6, 6, 0),
+            Dock = DockStyle.Top, AutoSize = false, Height = 58, Padding = new Padding(6, 6, 6, 0),
             Text = "Debloat only disables apps (nothing is deleted) and every change can be undone with \"Re-enable\". " +
-                   "Tick a group or single apps, then press \"Disable ticked\". Core Fire TV parts are never listed.",
+                   "Tick a group or single apps, then press \"Disable ticked\". If Fire OS won't allow that, " +
+                   "\"Force remove ticked\" removes it instead (a backup is kept on this PC, and \"Restore ticked\" puts it back).",
         };
         var bar = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(4) };
         foreach (var preset in Safety.Presets)
@@ -182,6 +194,8 @@ public sealed class MainForm : Form
         bar.Controls.Add(Btn("Disable ticked", async () => await DisableAsync(Ticked())));
         bar.Controls.Add(Btn("Re-enable ticked", async () => await EnableAsync(Ticked())));
         bar.Controls.Add(Btn("Re-enable everything I disabled", async () => await EnableAsync(settings.DisabledByMe.ToList())));
+        bar.Controls.Add(Btn("Force remove ticked", async () => await ForceRemoveAsync(Ticked())));
+        bar.Controls.Add(Btn("Restore ticked", async () => await RestoreAsync(Ticked())));
 
         page.Controls.Add(debloatList);
         page.Controls.Add(bar);
@@ -277,27 +291,44 @@ public sealed class MainForm : Form
         var f = appFilter.Text.Trim();
         appsList.BeginUpdate();
         appsList.Items.Clear();
+        var kind = appKind.SelectedIndex;
         foreach (var a in apps)
         {
-            if (a.System && !showSystem.Checked) continue;
-            if (f.Length > 0 && !a.Package.Contains(f, StringComparison.OrdinalIgnoreCase)) continue;
+            var show = kind switch
+            {
+                1 => !a.System && !a.Removed,
+                2 => a.System && !a.Removed,
+                3 => a.Disabled && !a.Removed,
+                4 => a.Removed,
+                _ => true,
+            };
+            if (!show) continue;
+            var name = Safety.NameOf(a.Package) ?? "";
+            if (f.Length > 0 && !a.Package.Contains(f, StringComparison.OrdinalIgnoreCase) &&
+                !name.Contains(f, StringComparison.OrdinalIgnoreCase)) continue;
+            var note = Safety.IsCore(a.Package) ? "Core part of Fire TV, can't be changed here"
+                : Safety.Caution(a.Package) is { } why ? "Caution: " + why
+                : settings.BlockedByFireOs.Contains(a.Package) && !a.Disabled ? "Fire OS won't disable it; Force remove works instead"
+                : "";
             var it = new ListViewItem(new[]
             {
-                a.Package, a.System ? "System" : "Yours", a.Disabled ? "Disabled" : "Enabled",
-                a.Foreground ? "On screen" : a.Running ? "Yes" : "",
+                a.Package, name, a.System ? "System" : "Yours",
+                a.Removed ? "Removed" : a.Disabled ? "Disabled" : "Enabled",
+                a.Foreground ? "On screen" : a.Running ? "Yes" : "", note,
             }) { Tag = a.Package };
-            if (Safety.IsProtected(a.Package)) it.ForeColor = SystemColors.GrayText;
-            else if (a.Disabled) it.ForeColor = Color.Firebrick;
+            if (Safety.IsCore(a.Package)) it.ForeColor = SystemColors.GrayText;
+            else if (a.Removed || a.Disabled) it.ForeColor = Color.Firebrick;
             appsList.Items.Add(it);
         }
         appsList.EndUpdate();
+        appCount.Text = $"{appsList.Items.Count} of {apps.Count} apps";
     }
 
     void FillRunningList()
     {
         runningList.BeginUpdate();
         runningList.Items.Clear();
-        foreach (var a in apps.Where(a => a.Running && !Safety.IsProtected(a.Package))
+        foreach (var a in apps.Where(a => a.Running && !Safety.IsCore(a.Package))
                      .OrderBy(a => a.System).ThenBy(a => a.Package))
         {
             runningList.Items.Add(new ListViewItem(new[]
@@ -317,10 +348,10 @@ public sealed class MainForm : Form
         {
             var exists = byPkg.TryGetValue(d.Package, out var a);
             var blocked = exists && !a!.Disabled && settings.BlockedByFireOs.Contains(d.Package);
-            var status = !exists ? "Not on stick" : a!.Disabled ? "Disabled" : blocked ? "Fire OS won't allow" : "Enabled";
+            var status = !exists ? "Not on stick" : a!.Removed ? "Removed" : a.Disabled ? "Disabled" : blocked ? "Fire OS won't allow" : "Enabled";
             var it = new ListViewItem(new[] { d.Name, d.Package, d.Preset, status, d.Why }) { Tag = d };
             if (a == null || blocked) it.ForeColor = SystemColors.GrayText;
-            else if (a.Disabled) it.ForeColor = Color.Firebrick;
+            else if (a.Disabled || a.Removed) it.ForeColor = Color.Firebrick;
             debloatList.Items.Add(it);
         }
         debloatList.EndUpdate();
@@ -339,7 +370,7 @@ public sealed class MainForm : Form
         {
             foreach (var p in pkgs)
             {
-                if (!allowProtected && Safety.IsProtected(p)) { Log($"{p}: skipped, the Fire TV needs it"); continue; }
+                if (!allowProtected && Safety.IsCore(p)) { Log($"{p}: skipped, the Fire TV needs it"); continue; }
                 await action(p);
             }
             await RefreshAllAsync();
@@ -352,7 +383,7 @@ public sealed class MainForm : Form
         if (pkgs.Count == 0) { Log("Select one or more apps first."); return; }
         var system = pkgs.Where(p => apps.FirstOrDefault(a => a.Package == p)?.System != false).ToList();
         if (system.Count > 0)
-            Log("System apps can't be uninstalled, only disabled: " + string.Join(", ", system));
+            Log("Fire OS won't uninstall system apps. Use Disable, or Force remove: " + string.Join(", ", system));
         var mine = pkgs.Except(system).ToList();
         if (mine.Count == 0) return;
         if (!Confirm($"Uninstall {mine.Count} app(s)? Their data on the stick is deleted too.\n\n" + string.Join("\n", mine))) return;
@@ -366,12 +397,12 @@ public sealed class MainForm : Form
     async Task DisableAsync(List<string> pkgs)
     {
         if (pkgs.Count == 0) { Log("Select or tick apps first."); return; }
-        var blocked = pkgs.Where(Safety.IsProtected).ToList();
+        var blocked = pkgs.Where(Safety.IsCore).ToList();
         foreach (var p in blocked) Log($"{p}: skipped, the Fire TV needs it");
         var todo = pkgs.Except(blocked).ToList();
         if (todo.Count == 0) return;
         if (!Confirm($"Disable {todo.Count} app(s)? They stop running and disappear from the menus. " +
-                     "You can turn them back on any time with Enable / Re-enable.\n\n" + string.Join("\n", todo))) return;
+                     "You can turn them back on any time with Enable / Re-enable.\n\n" + Describe(todo))) return;
         await Run("Disabling", async () =>
         {
             foreach (var p in todo)
@@ -382,6 +413,78 @@ public sealed class MainForm : Form
                 else if (r.msg.Contains("Fire OS blocked")) settings.BlockedByFireOs.Add(p);
             }
             settings.Save();
+            await RefreshAllAsync();
+        });
+    }
+
+    static string Describe(IEnumerable<string> pkgs) => string.Join("\n", pkgs.Select(p =>
+        Safety.Caution(p) is { } why ? $"{p}   (CAUTION: {why})" : p));
+
+    AppInfo? Find(string pkg) => apps.FirstOrDefault(a => a.Package == pkg);
+
+    async Task ForceRemoveAsync(List<string> pkgs)
+    {
+        if (pkgs.Count == 0) { Log("Select or tick apps first."); return; }
+        var core = pkgs.Where(Safety.IsCore).ToList();
+        foreach (var p in core) Log($"{p}: skipped, it's a core part of Fire TV and removing it could stop the stick working");
+        var todo = pkgs.Except(core).Where(p => Find(p) is { Removed: false }).ToList();
+        foreach (var p in pkgs.Except(core).Except(todo)) Log($"{p}: already removed or not on the stick");
+        if (todo.Count == 0) return;
+        var cautions = todo.Count(p => Safety.Caution(p) != null);
+        var text = $"Force remove {todo.Count} app(s)?\n\n" +
+                   "This removes them for your profile even when Fire OS won't let you uninstall them. " +
+                   "A copy of each app is saved on this PC first, and \"Restore\" puts it back. " +
+                   "If a restore ever fails, a factory reset brings every built-in app back.\n\n" +
+                   (cautions > 0 ? $"{cautions} of these are marked CAUTION: the stick keeps working, but the feature named stops.\n\n" : "") +
+                   Describe(todo);
+        if (MessageBox.Show(this, text, "Fire TV Manager", MessageBoxButtons.OKCancel,
+                cautions > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.OK) return;
+        await Run("Force-removing", async () =>
+        {
+            foreach (var p in todo)
+            {
+                var app = Find(p)!;
+                if (!app.System)
+                {
+                    Report(p, await FireTv.UninstallAsync(adb!, p));
+                    continue;
+                }
+                var paths = await FireTv.GetApkPathsAsync(adb!, p);
+                var backups = await FireTv.BackupApksAsync(adb!, paths, Path.Combine(Settings.BackupDir, p));
+                if (paths.Count == 0 || backups.Count != paths.Count)
+                {
+                    Log($"{p}: skipped, couldn't save a backup copy to this PC first");
+                    continue;
+                }
+                var r = await FireTv.ForceRemoveAsync(adb!, p);
+                Report(p, r);
+                if (r.ok)
+                {
+                    settings.RemovedByMe[p] = new RemovedApp { DevicePaths = paths, Backups = backups, System = true, When = DateTime.Now };
+                    settings.DisabledByMe.Remove(p);
+                    settings.Save();
+                }
+            }
+            await RefreshAllAsync();
+        });
+    }
+
+    async Task RestoreAsync(List<string> pkgs)
+    {
+        var todo = pkgs.Where(p => Find(p) is { Removed: true }).ToList();
+        if (todo.Count == 0) { Log("Pick apps whose state is \"Removed\" to restore them."); return; }
+        await Run("Restoring", async () =>
+        {
+            foreach (var p in todo)
+            {
+                settings.RemovedByMe.TryGetValue(p, out var rec);
+                var paths = rec?.DevicePaths ?? new List<string>();
+                var backups = rec?.Backups ?? new List<string>();
+                if (paths.Count == 0) paths = await FireTv.GetApkPathsAsync(adb!, p);
+                var r = await FireTv.RestoreAsync(adb!, p, paths, backups);
+                Report(p, r);
+                if (r.ok) { settings.RemovedByMe.Remove(p); settings.Save(); }
+            }
             await RefreshAllAsync();
         });
     }
@@ -404,7 +507,7 @@ public sealed class MainForm : Form
 
     async Task StopAllBackgroundAsync()
     {
-        var targets = apps.Where(a => a.Running && !a.Foreground && !a.System && !Safety.IsProtected(a.Package))
+        var targets = apps.Where(a => a.Running && !a.Foreground && !a.System && !Safety.IsCore(a.Package))
             .Select(a => a.Package).ToList();
         if (targets.Count == 0) { Log("No apps of yours are running in the background."); return; }
         if (!Confirm($"Force-stop {targets.Count} background app(s)? The app on screen is left alone.\n\n" + string.Join("\n", targets))) return;

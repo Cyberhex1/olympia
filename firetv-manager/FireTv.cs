@@ -9,6 +9,8 @@ public sealed class AppInfo
     public bool Disabled { get; set; }
     public bool Running { get; set; }
     public bool Foreground { get; set; }
+    /// <summary>Removed for user 0 (pm uninstall -k --user 0); the APK may still be on the stick.</summary>
+    public bool Removed { get; set; }
 }
 
 public sealed record DeviceInfo(string Model, string FireOs, string FreeRam, string Storage);
@@ -59,10 +61,10 @@ public static class FireTv
     public static async Task<List<AppInfo>> LoadAppsAsync(Adb adb)
     {
         var r = await adb.ShellAsync(
-            "pm list packages -s; echo @@; pm list packages -3; echo @@; pm list packages -d; echo @@; ps; echo @@; dumpsys activity activities | grep mResumedActivity",
+            "pm list packages -s; echo @@; pm list packages -3; echo @@; pm list packages -d; echo @@; ps; echo @@; dumpsys activity activities | grep mResumedActivity; echo @@; pm list packages -u -s; echo @@; pm list packages -u -3",
             60_000);
         var parts = r.Output.Replace("\r", "").Split("@@");
-        if (parts.Length < 5) throw new InvalidOperationException("Unexpected reply from the device: " + r.All);
+        if (parts.Length < 7) throw new InvalidOperationException("Unexpected reply from the device: " + r.All);
 
         static IEnumerable<string> Pkgs(string block) => block.Split('\n')
             .Select(l => l.Trim())
@@ -81,6 +83,11 @@ public static class FireTv
             var name = cols[^1].Split(':')[0];
             if (apps.TryGetValue(name, out var a)) a.Running = true;
         }
+
+        // in the "-u" lists but not the normal ones = removed for this user
+        foreach (var (block, system) in new[] { (parts[5], true), (parts[6], false) })
+            foreach (var p in Pkgs(block))
+                if (!apps.ContainsKey(p)) apps[p] = new AppInfo { Package = p, System = system, Removed = true };
 
         var fg = Regex.Match(parts[4], @"u0 ([^/\s]+)/");
         if (fg.Success && apps.TryGetValue(fg.Groups[1].Value, out var f)) f.Foreground = true;
@@ -107,6 +114,65 @@ public static class FireTv
         var r = await adb.RunAsync(new[] { "uninstall", Checked(pkg) }, true, 120_000);
         var ok = r.All.Contains("Success");
         return (ok, ok ? "uninstalled" : Explain(r.All));
+    }
+
+    static readonly Regex ApkPathRx = new(@"^/[A-Za-z0-9_./~=+-]+\.apk$", RegexOptions.Compiled);
+
+    /// <summary>Where the app's APK(s) live on the stick, e.g. /system/priv-app/x/x.apk.</summary>
+    public static async Task<List<string>> GetApkPathsAsync(Adb adb, string pkg)
+    {
+        var r = await adb.ShellAsync($"pm path {Checked(pkg)}");
+        return r.Output.Replace("\r", "").Split('\n').Select(l => l.Trim())
+            .Where(l => l.StartsWith("package:")).Select(l => l["package:".Length..])
+            .Where(p => ApkPathRx.IsMatch(p)).ToList();
+    }
+
+    /// <summary>Copy APKs from the stick to a PC folder. Returns the local files that arrived.</summary>
+    public static async Task<List<string>> BackupApksAsync(Adb adb, IEnumerable<string> devicePaths, string folder)
+    {
+        Directory.CreateDirectory(folder);
+        var saved = new List<string>();
+        foreach (var dp in devicePaths)
+        {
+            var local = Path.Combine(folder, Path.GetFileName(dp));
+            await adb.RunAsync(new[] { "pull", dp, local }, true, 10 * 60_000);
+            if (File.Exists(local) && new FileInfo(local).Length > 0) saved.Add(local);
+        }
+        return saved;
+    }
+
+    /// <summary>
+    /// Remove an app for the main profile, including system apps Fire OS won't let you uninstall.
+    /// -k keeps its data. A system app's APK stays on the system partition (no root needed or used).
+    /// </summary>
+    public static async Task<(bool ok, string msg)> ForceRemoveAsync(Adb adb, string pkg)
+    {
+        var r = await adb.ShellAsync($"pm uninstall -k --user 0 {Checked(pkg)}", 120_000);
+        var ok = r.All.Contains("Success");
+        return (ok, ok ? "removed" : Explain(r.All));
+    }
+
+    /// <summary>Put a removed app back: first from the copy still on the stick, then from the PC backup.</summary>
+    public static async Task<(bool ok, string msg)> RestoreAsync(Adb adb, string pkg, IReadOnlyList<string> devicePaths, IReadOnlyList<string> backups)
+    {
+        Checked(pkg);
+        var last = "no copy of the app was found";
+        if (devicePaths.Count == 1 && ApkPathRx.IsMatch(devicePaths[0]))
+        {
+            var r = await adb.ShellAsync($"pm install -r -d '{devicePaths[0]}'", 10 * 60_000);
+            if (r.All.Contains("Success")) return (true, "restored from the copy on the stick");
+            last = Explain(r.All);
+        }
+        var files = backups.Where(File.Exists).ToList();
+        if (files.Count > 0)
+        {
+            var args = new List<string> { files.Count == 1 ? "install" : "install-multiple", "-r", "-d" };
+            args.AddRange(files);
+            var r = await adb.RunAsync(args, true, 15 * 60_000);
+            if (r.All.Contains("Success")) return (true, "restored from the backup on this PC");
+            last = Explain(r.All);
+        }
+        return (false, last);
     }
 
     public static async Task ForceStopAsync(Adb adb, string pkg) =>
@@ -138,6 +204,7 @@ public static class FireTv
     static string Explain(string output)
     {
         if (output.Contains("protected package")) return "Fire OS blocked this: Amazon protects this app on your Fire OS version, so nothing was changed";
+        if (output.Contains("DELETE_FAILED")) return "Fire OS refused to remove it (" + FirstLine(output) + ")";
         if (output.Contains("SecurityException")) return "Fire OS blocked this for that app (" + FirstLine(output) + ")";
         if (output.Contains("INSTALL_FAILED_UPDATE_INCOMPATIBLE")) return "an older copy is signed differently; uninstall it first";
         if (output.Contains("INSTALL_FAILED_INSUFFICIENT_STORAGE")) return "not enough space on the stick";

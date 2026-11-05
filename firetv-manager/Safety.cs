@@ -3,14 +3,14 @@ namespace FireTVManager;
 public sealed record DebloatItem(string Preset, string Package, string Name, string Why);
 
 /// <summary>
-/// What the app refuses to touch, and the conservative debloat presets.
-/// Debloat only ever uses "disable" (pm disable-user), which is reversible with pm enable.
+/// What the app refuses to touch, what it warns about, and the conservative debloat presets.
+/// Debloat uses "disable" (pm disable-user), which is reversible with pm enable.
 /// </summary>
 public static class Safety
 {
-    // Packages the stick needs to boot, show the home screen, take remote input, stay signed in,
-    // connect to Wi-Fi, install apps, or talk to adb. The app will not disable, uninstall or force-stop these.
-    static readonly HashSet<string> ProtectedExact = new()
+    // Core packages: without these the stick won't boot, show the home screen, take remote or keyboard
+    // input, connect to Wi-Fi, stay signed in, install apps or talk to adb. Never disabled, removed or stopped.
+    static readonly HashSet<string> CoreExact = new()
     {
         "android",
         "com.android.systemui", "com.android.settings", "com.android.shell", "com.android.packageinstaller",
@@ -18,28 +18,53 @@ public static class Safety
         "com.android.location.fused", "com.android.inputdevices", "com.android.certinstaller",
         "com.amazon.tv.launcher", "com.amazon.firehomestarter", "com.amazon.tv.ime", "com.amazon.tv.oobe",
         "com.amazon.tv.keypolicymanager", "com.amazon.tv.intentsupport", "com.amazon.tv.routing",
-        "com.amazon.fireinputdevices", "com.amazon.venezia", "com.amazon.android.marketplace",
-        "com.amazon.device.software.ota", "com.amazon.device.software.ota.override",
-        "com.amazon.uxcontrollerservice", "com.amazon.storage.manager", "com.amazon.device.lowstoragemanager",
-        "com.amazon.application.compatibility.enforcer", "com.amazon.ftv.profilepicker", "com.amazon.platform.fdrw",
+        "com.amazon.fireinputdevices", "com.amazon.uxcontrollerservice",
+        "com.amazon.application.compatibility.enforcer",
         "com.amazon.connectivitycontroller", "com.amazon.net.smartconnect", "com.amazon.wifilocker",
-        "com.amazon.cardinal", "com.amazon.tv.devicecontrol", "com.amazon.tv.devicecontrolsettings",
-        "com.amazon.device.sync", "com.amazon.sync.service", "com.amazon.sync.provider.ipc",
-        "com.amazon.aca", "com.amazon.tv.consents", "com.amazon.vizzini", "com.amazon.vizzini.ftvcds",
         "com.amazon.client.metrics", "com.amazon.client.metrics.api", "com.amazon.metrics.api",
-        "com.amazon.minerva.client.api", "com.amazon.device.messaging",
+        "com.amazon.minerva.client.api",
     };
 
-    static readonly string[] ProtectedPrefixes =
+    static readonly string[] CorePrefixes =
     {
         "android.", "amazon.", "com.android.providers.", "com.amazon.tv.settings", "com.amazon.device.settings",
         "com.amazon.webview", "com.amazon.dcp", "com.amazon.identity", "com.amazon.tcomm", "com.amazon.ssm",
-        "com.amazon.device.blue", "com.amazon.providers", "com.amazon.whisper", "com.mediatek.",
+        "com.amazon.device.blue", "com.amazon.providers", "com.mediatek.",
     };
 
-    public static bool IsProtected(string pkg) =>
-        ProtectedExact.Contains(pkg) || ProtectedPrefixes.Any(pkg.StartsWith) || pkg.EndsWith(".library") ||
-        pkg.Contains(".sdk.");
+    // Caution packages: the stick still works without them, but something you may want breaks
+    // (Appstore and app updates, system updates, profiles, Alexa voice, casting, sync). Allowed with a warning.
+    static readonly Dictionary<string, string> CautionExact = new()
+    {
+        ["com.amazon.venezia"] = "Appstore: you can't install or update Amazon apps without it",
+        ["com.amazon.android.marketplace"] = "Appstore services: in-app purchases and app updates",
+        ["com.amazon.device.software.ota"] = "System updates",
+        ["com.amazon.device.software.ota.override"] = "System updates",
+        ["com.amazon.storage.manager"] = "Storage manager",
+        ["com.amazon.device.lowstoragemanager"] = "Low-storage warnings",
+        ["com.amazon.ftv.profilepicker"] = "Profile picker at start-up",
+        ["com.amazon.platform.fdrw"] = "Platform service",
+        ["com.amazon.cardinal"] = "Platform service",
+        ["com.amazon.tv.devicecontrol"] = "TV and soundbar control from the remote",
+        ["com.amazon.tv.devicecontrolsettings"] = "TV and soundbar control settings",
+        ["com.amazon.device.sync"] = "Account sync",
+        ["com.amazon.sync.service"] = "Account sync",
+        ["com.amazon.sync.provider.ipc"] = "Account sync",
+        ["com.amazon.aca"] = "Platform service",
+        ["com.amazon.tv.consents"] = "Privacy consent screens",
+        ["com.amazon.vizzini"] = "Alexa voice search on the remote",
+        ["com.amazon.vizzini.ftvcds"] = "Alexa voice search on the remote",
+        ["com.amazon.device.messaging"] = "Push messages that many apps rely on",
+    };
+
+    public static bool IsCore(string pkg) =>
+        CoreExact.Contains(pkg) || CorePrefixes.Any(pkg.StartsWith) || pkg.EndsWith(".library") || pkg.Contains(".sdk.");
+
+    /// <summary>Why removing this one could break something, or null when it's not a known risky package.</summary>
+    public static string? Caution(string pkg) =>
+        CautionExact.TryGetValue(pkg, out var why) ? why : pkg.StartsWith("com.amazon.whisper") ? "Casting and device discovery" : null;
+
+    public static string? NameOf(string pkg) => Items.FirstOrDefault(i => i.Package == pkg)?.Name;
 
     public static readonly string[] Presets = { "Telemetry & logging", "Ads & promotions", "Optional Amazon apps" };
 

@@ -2,6 +2,14 @@ using System.Text.Json;
 
 namespace FireTVManager;
 
+public sealed class RemovedApp
+{
+    public List<string> DevicePaths { get; set; } = new();
+    public List<string> Backups { get; set; } = new();
+    public bool System { get; set; }
+    public DateTime When { get; set; }
+}
+
 /// <summary>Saved in %APPDATA%\FireTVManager\settings.json.</summary>
 public sealed class Settings
 {
@@ -13,6 +21,11 @@ public sealed class Settings
 
     /// <summary>Packages Fire OS refused to disable ("protected package"), so debloat stops offering them.</summary>
     public SortedSet<string> BlockedByFireOs { get; set; } = new();
+
+    /// <summary>Apps this app force-removed, with where their APK was on the stick and the PC backup.</summary>
+    public SortedDictionary<string, RemovedApp> RemovedByMe { get; set; } = new();
+
+    public static string BackupDir => Path.Combine(Dir, "backups");
 
     static string Dir => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FireTVManager");
     static string FilePath => Path.Combine(Dir, "settings.json");

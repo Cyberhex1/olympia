@@ -32,10 +32,16 @@ static class Program
             lines.Add($"apps: {apps.Count} total, {apps.Count(a => !a.System)} user, {apps.Count(a => a.Disabled)} disabled, {apps.Count(a => a.Running)} running");
             lines.Add("foreground: " + string.Join(",", apps.Where(a => a.Foreground).Select(a => a.Package)));
             lines.Add("user apps: " + string.Join(", ", apps.Where(a => !a.System).Select(a => a.Package + (a.Running ? "*" : ""))));
-            lines.Add("running (not protected): " + string.Join(", ", apps.Where(a => a.Running && !Safety.IsProtected(a.Package)).Select(a => a.Package)));
+            lines.Add("running (not core): " + string.Join(", ", apps.Where(a => a.Running && !Safety.IsCore(a.Package)).Select(a => a.Package)));
+            lines.Add($"removed: {apps.Count(a => a.Removed)}; core: {apps.Count(a => Safety.IsCore(a.Package))}; caution: {apps.Count(a => Safety.Caution(a.Package) != null)}");
+            // backup check: copies one APK to the PC, changes nothing on the stick
+            var probe = "com.amazon.ftvads.deeplinking";
+            var paths = await FireTv.GetApkPathsAsync(adb, probe);
+            var saved = await FireTv.BackupApksAsync(adb, paths, Path.Combine(Path.GetTempPath(), "ftvm-backup-test"));
+            lines.Add($"backup test {probe}: paths={string.Join(",", paths)} saved={string.Join(",", saved.Select(s => $"{s} ({new FileInfo(s).Length} bytes)"))}");
             var present = apps.Select(a => a.Package).ToHashSet();
             foreach (var d in Safety.Items)
-                lines.Add($"debloat {(present.Contains(d.Package) ? "present" : "missing")}: {d.Package}{(Safety.IsProtected(d.Package) ? " PROTECTED?!" : "")}");
+                lines.Add($"debloat {(present.Contains(d.Package) ? "present" : "missing")}: {d.Package}{(Safety.IsCore(d.Package) ? " CORE?!" : "")}");
             return 0;
         }
         catch (Exception ex) { lines.Add("ERROR " + ex); return 1; }
